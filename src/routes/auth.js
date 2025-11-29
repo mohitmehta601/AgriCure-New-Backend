@@ -7,11 +7,16 @@ const router = express.Router();
 // Sign up
 router.post('/signup', async (req, res) => {
   try {
-    const { email, password, fullName, productKey, farmLocation, phoneNumber } = req.body;
+    const { email, password, fullName, productKey, phoneNumber } = req.body;
 
     // Validate product key is provided
     if (!productKey) {
       return res.status(400).json({ message: 'Product key is required' });
+    }
+
+    // Validate phone number is provided
+    if (!phoneNumber) {
+      return res.status(400).json({ message: 'Phone number is required' });
     }
 
     // Check if email already registered
@@ -35,7 +40,6 @@ router.post('/signup', async (req, res) => {
       fullName,
       productKey: validatedKey._id,
       productName: validatedKey.productName,
-      farmLocation,
       phoneNumber
     });
 
@@ -57,10 +61,7 @@ router.post('/signup', async (req, res) => {
         email: user.email,
         fullName: user.fullName,
         productName: user.productName,
-        farmLocation: user.farmLocation,
         phoneNumber: user.phoneNumber,
-        farmSize: user.farmSize,
-        farmSizeUnit: user.farmSizeUnit,
         createdAt: user.createdAt,
         updatedAt: user.updatedAt
       }
@@ -97,14 +98,45 @@ router.post('/login', async (req, res) => {
         id: user._id,
         email: user.email,
         fullName: user.fullName,
-        farmLocation: user.farmLocation,
         phoneNumber: user.phoneNumber,
-        farmSize: user.farmSize,
-        farmSizeUnit: user.farmSizeUnit,
         createdAt: user.createdAt,
         updatedAt: user.updatedAt
       }
     });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Update password
+router.post('/update-password', async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    const token = req.headers.authorization?.replace('Bearer ', '');
+
+    if (!token) {
+      return res.status(401).json({ message: 'No token provided' });
+    }
+
+    // Verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Verify current password
+    const isMatch = await user.comparePassword(currentPassword);
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Current password is incorrect' });
+    }
+
+    // Update password
+    user.password = newPassword;
+    await user.save();
+
+    res.json({ message: 'Password updated successfully' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

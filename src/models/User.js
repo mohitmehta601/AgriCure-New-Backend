@@ -18,13 +18,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  farmLocation: String,
-  phoneNumber: String,
-  farmSize: Number,
-  farmSizeUnit: {
+  phoneNumber: {
     type: String,
-    enum: ['hectares', 'acres', 'bigha'],
-    default: 'hectares'
+    required: true
   },
   productId: String,
   productKey: {
