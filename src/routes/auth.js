@@ -39,6 +39,7 @@ router.post('/signup', async (req, res) => {
       password,
       fullName,
       productKey: validatedKey._id,
+      productId: validatedKey.productId,
       productName: validatedKey.productName,
       phoneNumber
     });
@@ -60,6 +61,7 @@ router.post('/signup', async (req, res) => {
         id: user._id,
         email: user.email,
         fullName: user.fullName,
+        productId: user.productId,
         productName: user.productName,
         phoneNumber: user.phoneNumber,
         createdAt: user.createdAt,
@@ -98,6 +100,7 @@ router.post('/login', async (req, res) => {
         id: user._id,
         email: user.email,
         fullName: user.fullName,
+        productId: user.productId,
         phoneNumber: user.phoneNumber,
         createdAt: user.createdAt,
         updatedAt: user.updatedAt
