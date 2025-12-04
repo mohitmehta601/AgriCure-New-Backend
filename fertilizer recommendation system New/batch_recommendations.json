@@ -1,0 +1,26 @@
+{
+  "Field A - Wheat": {
+    "N_Status": "Optimal",
+    "P_Status": "Optimal",
+    "K_Status": "Optimal",
+    "Primary_Fertilizer": "Balanced NPK (14-14-14)",
+    "Secondary_Fertilizer": "No Secondary Fertilizer Required",
+    "pH_Amendment": "Balance Maintain"
+  },
+  "Field B - Rice": {
+    "N_Status": "Optimal",
+    "P_Status": "Optimal",
+    "K_Status": "Optimal",
+    "Primary_Fertilizer": "Balanced NPK (14-14-14)",
+    "Secondary_Fertilizer": "No Secondary Fertilizer Required",
+    "pH_Amendment": "Balance Maintain"
+  },
+  "Field C - Cotton": {
+    "N_Status": "Optimal",
+    "P_Status": "Optimal",
+    "K_Status": "Low",
+    "Primary_Fertilizer": "Urea + MOP (Muriate of Potash)",
+    "Secondary_Fertilizer": "No Secondary Fertilizer Required",
+    "pH_Amendment": "Balance Maintain"
+  }
+}

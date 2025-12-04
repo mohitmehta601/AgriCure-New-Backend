@@ -1,0 +1,91 @@
+{
+  "soil_condition_analysis": {
+    "current_status": {
+      "N_status": "Optimal",
+      "P_status": "Optimal",
+      "K_status": "Optimal",
+      "pH_status": "Optimal",
+      "moisture_status": "Optimal",
+      "nutrient_deficiencies_primary": [],
+      "nutrient_deficiencies_secondary": []
+    },
+    "soil_test_values": {
+      "nitrogen_mg_kg": 150.0,
+      "phosphorus_mg_kg": 30.0,
+      "potassium_mg_kg": 200.0,
+      "pH": 6.5,
+      "EC_mmhos_cm2": 500.0,
+      "soil_temperature": 27.0,
+      "soil_moisture": 50.0
+    },
+    "recommendations": [
+      "Maintain current pH levels",
+      "Regular soil testing recommended",
+      "Consider crop rotation"
+    ]
+  },
+  "primary_fertilizer": {
+    "name": "Balanced NPK (14-14-14)",
+    "amount_kg": 200,
+    "npk": "Check fertilizer label",
+    "reason": "Recommended based on Optimal nitrogen status",
+    "application_method": "Apply in split doses during vegetative growth"
+  },
+  "secondary_fertilizer": {
+    "name": "No Secondary Fertilizer Required",
+    "amount_kg": 200,
+    "reason": "Addresses micronutrient deficiencies based on soil analysis",
+    "application_method": "Apply during active growth phase"
+  },
+  "organic_alternatives": [
+    {
+      "name": "Vermicompost",
+      "amount_kg": 5000,
+      "price_per_kg": 15.0,
+      "cost": 75000.0,
+      "reason": "Provides organic nutrients and improves soil structure for Maize",
+      "timing": "Apply 3-4 weeks before sowing"
+    },
+    {
+      "name": "Neem cake",
+      "amount_kg": 1000,
+      "price_per_kg": 35.0,
+      "cost": 35000.0,
+      "reason": "Provides organic nutrients and improves soil structure for Maize",
+      "timing": "Apply 3-4 weeks before sowing"
+    },
+    {
+      "name": "Compost",
+      "amount_kg": 10000,
+      "price_per_kg": 8.0,
+      "cost": 80000.0,
+      "reason": "Provides organic nutrients and improves soil structure for Maize",
+      "timing": "Apply 3-4 weeks before sowing"
+    }
+  ],
+  "application_timing": {
+    "primary_fertilizer": "Apply 1-2 weeks before planting (around 13 May 2025) or as top dressing during vegetative growth",
+    "secondary_fertilizer": "Apply during fruit development stage (around 10 June 2025) or as recommended for specific fertilizer",
+    "organic_options": "Apply 3-4 weeks before planting (around 29 April 2025) to allow decomposition"
+  },
+  "cost_estimate": {
+    "primary_fertilizer": "₹0",
+    "secondary_fertilizer": "₹0",
+    "organic_options": "₹190,000",
+    "total_estimate": "₹190,000",
+    "field_size": "For 2.00 hectares"
+  },
+  "_metadata": {
+    "generated_at": "2025-12-04T16:11:50.773908",
+    "model_used": "ML Stacking Model (Fallback Mode)",
+    "nutrient_units": "mg/kg"
+  },
+  "ml_predictions": {
+    "N_Status": "Optimal",
+    "P_Status": "Optimal",
+    "K_Status": "Optimal",
+    "Primary_Fertilizer": "Balanced NPK (14-14-14)",
+    "Secondary_Fertilizer": "No Secondary Fertilizer Required",
+    "pH_Amendment": "Balance Maintain"
+  }
+}
