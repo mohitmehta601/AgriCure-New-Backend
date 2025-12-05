@@ -118,7 +118,8 @@ DEFAULT_PRICES = {
     "potassium_magnesium_sulphate": 150.00,
     "rock_phosphate": 15.00,
     "urea_ammonium_nitrate_uan": 75.00,
-    "balanced_npk_14_14_14": 35.00,
+    "balanced_npk_maintenance": 35.00,
+    "calcium_ammonium_nitrate_can": 85.00,
     "dap_mop_mixture": 155.00,
     "urea_mop_mixture": 63.00,
     
@@ -242,6 +243,19 @@ def normalize_fertilizer_name(name: str) -> str:
     if not name or name in ['—', 'None', 'NA']:
         return None
     
+    # Handle compound fertilizers (e.g., "DAP + MOP")
+    # Extract first fertilizer if it's a combination with "+"
+    if '+' in name:
+        # Split by '+' and take the first part
+        name = name.split('+')[0].strip()
+    
+    # Extract abbreviation if present (e.g., "DAP (Di-Ammonium Phosphate)" -> "DAP")
+    if '(' in name:
+        # Get the part before the parentheses
+        abbreviation = name.split('(')[0].strip()
+        if abbreviation:
+            name = abbreviation
+    
     # Convert to lowercase and replace spaces with underscores
     normalized = name.lower().replace(' ', '_').replace('(', '').replace(')', '')
     
@@ -270,13 +284,21 @@ def normalize_fertilizer_name(name: str) -> str:
     'urea_ammonium_nitrate': 'urea_ammonium_nitrate_uan',
     'as': 'ammonium_sulphate',
     'an': 'ammonium_nitrate',
+    'ammonium_nitrate': 'ammonium_nitrate',
+    'ammonium_sulphate': 'ammonium_sulphate',
+    'ammonium_chloride': 'ammonium_chloride',
+    'urea': 'urea',
     'urea46': 'urea',
     'rockp': 'rock_phosphate',
-    'npk': 'balanced_npk_14_14_14',
-    'balanced_npk_14_14_14': 'balanced_npk_14_14_14',
+    'rock_phosphate': 'rock_phosphate',
+    'npk': 'balanced_npk_maintenance',
+    'balanced_npk': 'balanced_npk_maintenance',
+    'balanced_npk_14_14_14': 'balanced_npk_maintenance',
+    'balanced_npk_14-14-14': 'balanced_npk_maintenance',
     'potassium_nitrate': 'potassium_nitrate',
     'potassium_carbonate': 'potassium_carbonate',
     'potassium_magnesium_sulphate': 'potassium_magnesium_sulphate',
+    'potassium-magnesium_sulphate': 'potassium_magnesium_sulphate',
     'dap_mop': 'dap_mop_mixture',
     'urea_mop': 'urea_mop_mixture',
 
@@ -388,27 +410,91 @@ def get_price(fertilizer_name: str) -> float:
     return DEFAULT_PRICES.get(normalized, 0.0)
 
 
-def calculate_application_dates(sowing_date_str: str) -> Dict[str, str]:
-    """Calculate application timing based on sowing date"""
+def calculate_application_dates(sowing_date_str: str, crop_type: str = "default") -> Dict[str, str]:
+    """
+    Calculate precise fertilizer application dates based on crop growth stages.
+    All timings are shown after sowing date.
+    """
     try:
         sowing_date = datetime.fromisoformat(sowing_date_str)
     except:
         # Fallback to relative timing if date parsing fails
         return {
-            "primary": "Apply 1-2 weeks before planting or as top dressing during vegetative growth",
-            "secondary": "Apply during active growth phase or as recommended for specific fertilizer",
-            "organics": "Apply 3-4 weeks before planting to allow decomposition"
+            "primary": "Apply at sowing (Day 0) and during early vegetative growth (Day 20-30)",
+            "secondary": "Apply during active growth phase (Day 40-60)",
+            "organics": "Apply at sowing (Day 0) or incorporate into soil before planting"
         }
     
-    # Calculate specific dates
-    primary_date = sowing_date - timedelta(days=7)  # 1 week before sowing
-    secondary_date = sowing_date + timedelta(days=21)  # 3 weeks after sowing
-    organics_date = sowing_date - timedelta(days=21)  # 3 weeks before sowing
+    # Crop-specific growth stage durations (in days)
+    crop_stages = {
+        "rice": {"tillering": 20, "panicle_initiation": 45, "flowering": 75},
+        "wheat": {"tillering": 25, "crown_root_initiation": 40, "jointing": 60},
+        "maize": {"knee_high": 25, "tasseling": 50, "silking": 65},
+        "barley": {"tillering": 25, "stem_extension": 40, "heading": 65},
+        "jowar": {"vegetative": 30, "flag_leaf": 45, "flowering": 65},
+        "bajra": {"vegetative": 25, "panicle_emergence": 40, "flowering": 55},
+        "ragi": {"tillering": 20, "flag_leaf": 35, "flowering": 55},
+        "groundnut": {"vegetative": 25, "flowering": 35, "pegging": 50},
+        "mustard": {"vegetative": 25, "branching": 40, "flowering": 60},
+        "soyabean": {"vegetative": 25, "flowering": 40, "pod_formation": 60},
+        "sugarcane": {"tillering": 45, "grand_growth": 90, "elongation": 150},
+        "cotton": {"vegetative": 35, "square_formation": 50, "flowering": 75},
+        "chickpea": {"vegetative": 30, "branching": 45, "flowering": 65},
+        "moong": {"vegetative": 20, "flowering": 30, "pod_formation": 45},
+        "garlic": {"bulb_initiation": 30, "bulb_development": 60, "clove_formation": 90},
+        "onion": {"vegetative": 30, "bulb_initiation": 50, "bulb_enlargement": 75},
+        "default": {"vegetative": 30, "flowering": 60, "fruit_development": 90}
+    }
+    
+    # Normalize crop name
+    crop_normalized = crop_type.lower().strip()
+    stages = crop_stages.get(crop_normalized, crop_stages["default"])
+    
+    # Get stage names and days
+    stage_names = list(stages.keys())
+    stage_days = list(stages.values())
+    
+    # Calculate application dates (all after sowing)
+    at_sowing = sowing_date.strftime("%d %B %Y")
+    first_stage = (sowing_date + timedelta(days=stage_days[0])).strftime("%d %B %Y")
+    second_stage = (sowing_date + timedelta(days=stage_days[1])).strftime("%d %B %Y")
+    third_stage = (sowing_date + timedelta(days=stage_days[2])).strftime("%d %B %Y")
+    
+    # Crop-specific notes
+    crop_notes = {
+        "rice": "For transplanted rice, give first dose 5-7 days after transplanting",
+        "wheat": "Split nitrogen: Half at sowing, remaining in 2 doses later",
+        "maize": "Give nitrogen fertilizer in 2-3 doses for best results",
+        "barley": "Give most nitrogen at tillering time",
+        "jowar": "Give nitrogen in 2 doses: Half at sowing, half at knee high stage",
+        "bajra": "Give all P and K at sowing, nitrogen in splits",
+        "ragi": "Give organic manures at sowing, chemical fertilizers in splits",
+        "groundnut": "Don't give too much nitrogen; focus on phosphorus and potassium",
+        "mustard": "Use sulphur fertilizers for better yield",
+        "soyabean": "Use less nitrogen if seeds are treated with Rhizobium",
+        "sugarcane": "Give fertilizers in 3-4 doses over 5-6 months",
+        "cotton": "Give potassium during boll formation for better fiber quality",
+        "chickpea": "Treat seeds with Rhizobium; give phosphorus at sowing",
+        "moong": "Use Rhizobium culture; needs very little nitrogen",
+        "garlic": "Give organic manure 7-10 days before planting; nitrogen in doses",
+        "onion": "Give nitrogen in 3-4 doses; reduce when bulbs start forming"
+    }
+    
+    crop_note = crop_notes.get(crop_normalized, "Give fertilizers in small doses for better results")
     
     return {
-        "primary": f"Apply 1-2 weeks before planting (around {primary_date.strftime('%d %B %Y')}) or as top dressing during vegetative growth",
-        "secondary": f"Apply during fruit development stage (around {secondary_date.strftime('%d %B %Y')}) or as recommended for specific fertilizer",
-        "organics": f"Apply 3-4 weeks before planting (around {organics_date.strftime('%d %B %Y')}) to allow decomposition"
+        "primary": f"At sowing: Apply on {at_sowing} (Day 0) | "
+                  f"First dose: Apply at {stage_names[0].replace('_', ' ').title()} stage "
+                  f"on {first_stage} (Day {stage_days[0]}) | Tip: {crop_note}",
+        
+        "secondary": f"Apply at {stage_names[1].replace('_', ' ').title()} stage "
+                    f"on {second_stage} (Day {stage_days[1]}) | "
+                    f"You can also apply at {stage_names[2].replace('_', ' ').title()} stage "
+                    f"on {third_stage} (Day {stage_days[2]}) if needed",
+        
+        "organics": f"Mix with soil when sowing on {at_sowing} (Day 0) or "
+                   f"apply 7-10 days before sowing for better results. "
+                   f"Mix well with soil at 6-8 inch depth"
     }
 
 
@@ -456,7 +542,11 @@ def calculate_fertilizer_quantity(
     'muriate_of_potash_mop': 80,
     'sulphate_of_potash_sop': 80,
     'potassium_sulfate': 80,  # alias for SOP
+    'potassium_nitrate': 75,
+    'potassium_carbonate': 90,
+    'potassium_magnesium_sulphate': 85,
     'balanced_npk_maintenance': 100,
+    'ammonium_chloride': 160,
 
     # ----------------------------------------
     # 🧪 Secondary & Micronutrient Sources
@@ -579,22 +669,22 @@ Provide recommendations in the following JSON format:
     }},
     "organic_alternatives": [
         {{
-            "name": "Select from: {', '.join(ORGANIC_ALTERNATIVES[:10])}",
-            "quantity_kg": "Estimate quantity for {input_data.field_size} hectares",
-            "reason": "Benefits of this organic alternative",
-            "timing": "Best time to apply (e.g., '3-4 weeks before sowing')"
+            "name": "Select ONE organic fertilizer from this list that best addresses the SPECIFIC nutrient deficiencies (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) for {input_data.crop_type} in {input_data.soil_type} soil: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "quantity_kg": "Calculate realistic quantity for {input_data.field_size} hectares based on the selected organic fertilizer's typical application rate and current soil nutrient levels (N:{input_data.nitrogen} mg/kg, P:{input_data.phosphorus} mg/kg, K:{input_data.potassium} mg/kg)",
+            "reason": "Explain specifically how this organic fertilizer addresses the nutrient status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) and why it's suitable for {input_data.crop_type} in {input_data.soil_type} soil with EC:{input_data.ec} and Temp:{input_data.soil_temperature}°C",
+            "timing": "Specify timing based on sowing date ({input_data.sowing_date}), crop growth stages for {input_data.crop_type}, and current soil temperature ({input_data.soil_temperature}°C)"
         }},
         {{
-            "name": "Select another from: {', '.join(ORGANIC_ALTERNATIVES[10:])}",
-            "quantity_kg": "Estimate quantity for {input_data.field_size} hectares",
-            "reason": "Benefits of this organic alternative",
-            "timing": "Best time to apply"
+            "name": "Select a DIFFERENT organic fertilizer that complements the primary fertilizer ({ml_prediction.primary_fertilizer}) and addresses secondary needs based on NPK status and soil conditions. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "quantity_kg": "Calculate quantity considering field size ({input_data.field_size} ha), soil EC ({input_data.ec}), and the fact that it's supplementing {ml_prediction.primary_fertilizer}",
+            "reason": "Explain how this complements {ml_prediction.primary_fertilizer} and {secondary_fertilizer}, considering the soil temperature ({input_data.soil_temperature}°C), moisture ({input_data.soil_moisture}%), and pH ({input_data.ph})",
+            "timing": "Provide specific timing that doesn't conflict with {ml_prediction.primary_fertilizer} application and suits {input_data.crop_type} cultivation"
         }},
         {{
-            "name": "Select third option from the provided list",
-            "quantity_kg": "Estimate quantity for {input_data.field_size} hectares",
-            "reason": "Benefits of this organic alternative",
-            "timing": "Best time to apply"
+            "name": "Select a THIRD distinct organic option that provides long-term soil health benefits for {input_data.soil_type} soil growing {input_data.crop_type}. Must be different from previous two. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "quantity_kg": "Calculate based on {input_data.field_size} hectares and soil improvement needs indicated by pH:{input_data.ph}, EC:{input_data.ec}, and current NPK levels",
+            "reason": "Focus on long-term soil conditioning benefits for {input_data.soil_type} soil, considering pH amendment needs ({ml_prediction.ph_amendment}) and overall soil health improvement beyond NPK",
+            "timing": "Suggest optimal application timing that maximizes soil conditioning benefits for {input_data.crop_type} cultivation cycle"
         }}
     ],
     "soil_recommendations": [
@@ -607,10 +697,20 @@ Provide recommendations in the following JSON format:
 
 **Important Guidelines:**
 1. All organic alternatives MUST be selected ONLY from this list: {', '.join(ORGANIC_ALTERNATIVES)}
-2. NPK values are provided in mg/kg (not kg/ha)
-3. Consider the specific crop ({input_data.crop_type}) requirements
-4. Provide practical, farmer-friendly advice
-5. Return ONLY valid JSON, no additional text
+2. Each organic alternative must be DIFFERENT and specifically chosen based on:
+   - Current NPK status: N={ml_prediction.n_status}, P={ml_prediction.p_status}, K={ml_prediction.k_status}
+   - Soil nutrient levels: N={input_data.nitrogen} mg/kg, P={input_data.phosphorus} mg/kg, K={input_data.potassium} mg/kg
+   - Soil type: {input_data.soil_type}
+   - Crop type: {input_data.crop_type}
+   - Soil conditions: pH={input_data.ph}, EC={input_data.ec}, Temp={input_data.soil_temperature}°C, Moisture={input_data.soil_moisture}%
+   - Primary fertilizer being used: {ml_prediction.primary_fertilizer}
+   - Secondary fertilizer being used: {secondary_fertilizer}
+   - pH amendment needed: {ml_prediction.ph_amendment}
+3. Calculate quantities based on actual field size ({input_data.field_size} hectares) and typical application rates
+4. Provide distinct reasons for each organic alternative - don't repeat generic statements
+5. Consider how each organic fertilizer addresses specific deficiencies or soil conditions
+6. Timing should be specific to {input_data.crop_type} growth stages and soil temperature
+7. Return ONLY valid JSON, no additional text
 """
     
     return prompt
@@ -679,6 +779,7 @@ def generate_enhanced_recommendation(
     print("💰 Calculating quantities and costs...")
     
     # Primary fertilizer
+    print(f"🔍 Primary fertilizer from ML: '{ml_prediction.primary_fertilizer}'")
     primary_quantity = calculate_fertilizer_quantity(
         ml_prediction.primary_fertilizer,
         input_data.field_size,
@@ -687,8 +788,11 @@ def generate_enhanced_recommendation(
     )
     primary_price_per_kg = get_price(ml_prediction.primary_fertilizer)
     primary_cost = primary_quantity * primary_price_per_kg
+    print(f"   Normalized name: '{normalize_fertilizer_name(ml_prediction.primary_fertilizer)}'")
+    print(f"   Quantity: {primary_quantity} kg, Price: ₹{primary_price_per_kg}/kg, Total: ₹{primary_cost:.2f}")
     
     # Secondary fertilizer
+    print(f"🔍 Secondary fertilizer from model: '{secondary_fertilizer}'")
     secondary_quantity = calculate_fertilizer_quantity(
         secondary_fertilizer,
         input_data.field_size,
@@ -697,6 +801,8 @@ def generate_enhanced_recommendation(
     )
     secondary_price_per_kg = get_price(secondary_fertilizer)
     secondary_cost = secondary_quantity * secondary_price_per_kg
+    print(f"   Normalized name: '{normalize_fertilizer_name(secondary_fertilizer)}'")
+    print(f"   Quantity: {secondary_quantity} kg, Price: ₹{secondary_price_per_kg}/kg, Total: ₹{secondary_cost:.2f}")
     
     # Organic alternatives
     organic_costs = []
@@ -732,7 +838,7 @@ def generate_enhanced_recommendation(
     total_cost = primary_cost + secondary_cost + total_organic_cost
     
     # Calculate application timing
-    application_timing = calculate_application_dates(input_data.sowing_date)
+    application_timing = calculate_application_dates(input_data.sowing_date, input_data.crop_type)
     
     # Calculate average confidence
     if confidence_scores:
@@ -888,24 +994,109 @@ def generate_fallback_recommendation(
         "secondary"
     )
     
-    # Select default organic alternatives
-    default_organics = ["Vermicompost", "Neem cake", "Compost"]
+    # Select organic alternatives based on soil conditions and crop type
+    organic_alternatives_map = {
+        # For nitrogen deficiency
+        ("low", "n"): ["Poultry manure", "Farmyard manure (FYM)", "Green manure"],
+        # For phosphorus deficiency
+        ("low", "p"): ["Bone meal", "PSB (Phosphate Solubilizing Bacteria)", "Mustard cake"],
+        # For potassium deficiency
+        ("low", "k"): ["Banana wastes", "Compost", "Seaweed extract"],
+        # For high nitrogen
+        ("high", "n"): ["Compost", "Mulch", "Azolla"],
+        # For balanced/optimal conditions
+        ("optimal", "general"): ["Vermicompost", "Neem cake", "Compost"],
+        # For clay soils
+        ("clay", "soil"): ["Compost", "Mulch", "Vermicompost"],
+        # For sandy soils
+        ("sandy", "soil"): ["Farmyard manure (FYM)", "Vermicompost", "Green manure"],
+        # For loamy soils
+        ("loamy", "soil"): ["Neem cake", "Compost", "Poultry manure"],
+        # For alluvial soils
+        ("alluvial", "soil"): ["Vermicompost", "Mustard cake", "Bone meal"],
+        # For red soils
+        ("red", "soil"): ["Green manure", "Compost", "Bone meal"],
+        # For black soils
+        ("black", "soil"): ["Farmyard manure (FYM)", "Compost", "Neem cake"],
+    }
+    
+    # Determine which organic alternatives to use based on nutrient status
+    selected_organics = []
+    
+    # Check N status first
+    if ml_prediction.n_status.lower() == "low":
+        selected_organics.extend(organic_alternatives_map.get(("low", "n"), [])[:1])
+    elif ml_prediction.n_status.lower() == "high":
+        selected_organics.extend(organic_alternatives_map.get(("high", "n"), [])[:1])
+    
+    # Check P status
+    if ml_prediction.p_status.lower() == "low":
+        selected_organics.extend(organic_alternatives_map.get(("low", "p"), [])[:1])
+    
+    # Check K status
+    if ml_prediction.k_status.lower() == "low":
+        selected_organics.extend(organic_alternatives_map.get(("low", "k"), [])[:1])
+    
+    # Prioritize soil type specific organics - add all 3 from soil type list
+    soil_key = (input_data.soil_type.lower(), "soil")
+    if soil_key in organic_alternatives_map:
+        soil_organics = organic_alternatives_map[soil_key]
+        for org in soil_organics:
+            if len(selected_organics) >= 3:
+                break
+            if org not in selected_organics:
+                selected_organics.append(org)
+    
+    # If we still don't have enough, add from optimal list
+    optimal_organics = organic_alternatives_map.get(("optimal", "general"), ["Vermicompost", "Neem cake", "Compost"])
+    for org in optimal_organics:
+        if len(selected_organics) >= 3:
+            break
+        if org not in selected_organics:
+            selected_organics.append(org)
+    
+    # Ensure we have exactly 3 unique organic alternatives
+    selected_organics = list(dict.fromkeys(selected_organics))[:3]
+    if len(selected_organics) < 3:
+        all_organics = ["Vermicompost", "Neem cake", "Compost", "Farmyard manure (FYM)", "Poultry manure"]
+        for org in all_organics:
+            if len(selected_organics) >= 3:
+                break
+            if org not in selected_organics:
+                selected_organics.append(org)
+    
     organic_details = []
     organic_costs = []
     
-    for org_name in default_organics:
+    for org_name in selected_organics:
         org_quantity = calculate_fertilizer_quantity(org_name, input_data.field_size, "optimal", "organic")
         org_price = get_price(org_name)
         org_cost = org_quantity * org_price
         organic_costs.append(org_cost)
+        
+        # Generate specific reason based on nutrient status and soil conditions
+        reasons = []
+        if ml_prediction.n_status.lower() == "low" and org_name in organic_alternatives_map.get(("low", "n"), []):
+            reasons.append(f"Addresses nitrogen deficiency (current: {input_data.nitrogen} mg/kg)")
+        if ml_prediction.p_status.lower() == "low" and org_name in organic_alternatives_map.get(("low", "p"), []):
+            reasons.append(f"Provides phosphorus for {input_data.crop_type} (current: {input_data.phosphorus} mg/kg)")
+        if ml_prediction.k_status.lower() == "low" and org_name in organic_alternatives_map.get(("low", "k"), []):
+            reasons.append(f"Supplements potassium levels (current: {input_data.potassium} mg/kg)")
+        
+        if not reasons:
+            reasons.append(f"Improves soil structure for {input_data.soil_type} soil growing {input_data.crop_type}")
+            if input_data.soil_moisture < 40:
+                reasons.append("Helps retain moisture")
+            elif input_data.ec > 2.0:
+                reasons.append("Helps reduce soil salinity")
         
         organic_details.append({
             "name": org_name,
             "amount_kg": org_quantity,
             "price_per_kg": org_price,
             "cost": org_cost,
-            "reason": f"Provides organic nutrients and improves soil structure for {input_data.crop_type}",
-            "timing": "Apply 3-4 weeks before sowing"
+            "reason": "; ".join(reasons),
+            "timing": f"Apply 3-4 weeks before sowing (considering {input_data.crop_type} cultivation and soil temp: {input_data.soil_temperature}°C)"
         })
     
     # Calculate costs
@@ -918,7 +1109,7 @@ def generate_fallback_recommendation(
     total_cost = primary_cost + secondary_cost + total_organic_cost
     
     # Application timing
-    application_timing = calculate_application_dates(input_data.sowing_date)
+    application_timing = calculate_application_dates(input_data.sowing_date, input_data.crop_type)
     
     # Build basic report
     report = {
@@ -975,8 +1166,12 @@ def generate_fallback_recommendation(
         },
         "_metadata": {
             "generated_at": datetime.now().isoformat(),
-            "model_used": "ML Stacking Model (Fallback Mode)",
-            "nutrient_units": "mg/kg"
+            "model_used": "ML Stacking Model (Intelligent Fallback - Crop & Soil Specific)",
+            "nutrient_units": "mg/kg",
+            "crop_type": input_data.crop_type,
+            "soil_type": input_data.soil_type,
+            "npk_status": f"N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}",
+            "note": "Organic alternatives selected based on NPK status, soil type, and crop requirements"
         }
     }
     

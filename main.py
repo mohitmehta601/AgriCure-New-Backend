@@ -183,7 +183,8 @@ class EnhancedFertilizerInput(FertilizerPredictionInput):
 class FertilizerRecommendationRequest(BaseModel):
     """Request model for fertilizer recommendations"""
     # Farm details
-    size: float = Field(..., gt=0, description="Field size in hectares")
+    size: float = Field(..., gt=0, description="Field size (will be converted to hectares)")
+    unit: str = Field(default="hectares", description="Unit of field size: 'hectares', 'acres', or 'bigha'")
     crop: str = Field(..., description="Crop type (e.g., Wheat, Rice, Maize)")
     soil: str = Field(..., description="Soil type (e.g., Loamy, Clay, Sandy, Alluvial)")
     sowing_date: str = Field(..., description="Sowing date in YYYY-MM-DD format")
@@ -215,6 +216,35 @@ class FertilizerRecommendationResponse(BaseModel):
 # ============================================================================
 # HELPER FUNCTIONS
 # ============================================================================
+
+def convert_to_hectares(size: float, unit: str) -> float:
+    """
+    Convert field size from various units to hectares.
+    
+    Args:
+        size: Field size value
+        unit: Unit of measurement ('hectares', 'acres', 'bigha')
+        
+    Returns:
+        Size in hectares
+        
+    Conversion factors:
+        - 1 acre = 0.404686 hectares
+        - 1 bigha = 0.25 hectares (standard bigha, varies by region)
+    """
+    unit_lower = unit.lower().strip()
+    
+    if unit_lower in ['hectare', 'hectares', 'ha']:
+        return size
+    elif unit_lower in ['acre', 'acres']:
+        return size * 0.404686
+    elif unit_lower in ['bigha', 'bighas']:
+        # Standard bigha (varies by region: 0.165 to 0.33 hectares)
+        # Using 0.25 hectares as average
+        return size * 0.25
+    else:
+        logger.warning(f"Unknown unit '{unit}', assuming hectares")
+        return size
 
 def get_default_environmental_data(lat: float, lon: float) -> dict:
     """
@@ -558,11 +588,14 @@ async def get_fertilizer_recommendation(request: FertilizerRecommendationRequest
         )
     
     try:
-        logger.info(f"Processing fertilizer recommendation request for {request.crop} on {request.size} hectares")
+        # Convert field size to hectares
+        size_in_hectares = convert_to_hectares(request.size, request.unit)
+        logger.info(f"Field size: {request.size} {request.unit} = {size_in_hectares:.4f} hectares")
+        logger.info(f"Processing fertilizer recommendation request for {request.crop} on {size_in_hectares:.4f} hectares")
         
         # Call the Final_Model system
         recommendation = fertilizer_system.predict(
-            size=request.size,
+            size=size_in_hectares,
             crop=request.crop,
             soil=request.soil,
             sowing_date=request.sowing_date,
@@ -610,9 +643,15 @@ async def predict_llm_enhanced(request: EnhancedFertilizerInput):
         raise HTTPException(status_code=503, detail="Fertilizer system not available")
     
     try:
+        # Convert field size to hectares
+        field_unit = request.Field_Unit or "hectares"
+        size_in_hectares = convert_to_hectares(request.Field_Size or 1.0, field_unit)
+        logger.info(f"Field size: {request.Field_Size} {field_unit} = {size_in_hectares:.4f} hectares")
+        
         # Map frontend format to our format
         recommendation_request = FertilizerRecommendationRequest(
-            size=request.Field_Size or 1.0,
+            size=size_in_hectares,
+            unit="hectares",
             crop=request.Crop_Type,
             soil=request.Soil_Type,
             sowing_date=request.Sowing_Date or datetime.now().strftime('%Y-%m-%d'),
@@ -636,7 +675,7 @@ async def predict_llm_enhanced(request: EnhancedFertilizerInput):
                 "npk": "Varies",
                 "rate_per_hectare": 50,
                 "cost_per_hectare": 1000,
-                "total_cost": (request.Field_Size or 1.0) * 1000,
+                "total_cost": size_in_hectares * 1000,
                 "application_notes": "Apply as recommended"
             },
             "secondary_fertilizer": {
@@ -644,7 +683,7 @@ async def predict_llm_enhanced(request: EnhancedFertilizerInput):
                 "npk": "Varies",
                 "rate_per_hectare": 25,
                 "cost_per_hectare": 500,
-                "total_cost": (request.Field_Size or 1.0) * 500,
+                "total_cost": size_in_hectares * 500,
                 "application_notes": "Apply if needed"
             },
             "soil_condition": {
