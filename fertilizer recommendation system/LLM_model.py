@@ -63,6 +63,180 @@ ORGANIC_ALTERNATIVES = [
     "Jeevamrut"
 ]
 
+# ==================================================================================
+# ORGANIC FERTILIZER NUTRIENT INFORMATION
+# ==================================================================================
+ORGANIC_NUTRIENTS = {
+    "Vermicompost": {
+        "npk": "1.5-1.0-1.5",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": ["Calcium", "Magnesium"],
+        "micronutrients": ["Zinc", "Iron", "Copper", "Manganese"],
+        "benefits": "Improves soil structure, water retention, and microbial activity; Rich in humus and beneficial microorganisms",
+        "best_for": "All crops, especially vegetables and fruits"
+    },
+    "Farmyard manure (FYM)": {
+        "npk": "0.5-0.2-0.5",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": ["Calcium", "Magnesium", "Sulfur"],
+        "micronutrients": ["Iron", "Zinc", "Copper", "Boron"],
+        "benefits": "Adds organic matter, improves soil tilth, enhances water holding capacity; Slow nutrient release",
+        "best_for": "Field crops, improves clay and sandy soils"
+    },
+    "Compost": {
+        "npk": "0.8-0.5-0.8",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": ["Calcium", "Magnesium"],
+        "micronutrients": ["Iron", "Manganese", "Boron"],
+        "benefits": "Balances soil pH, increases nutrient availability, promotes beneficial microbes; Excellent organic matter source",
+        "best_for": "All crops, soil conditioning"
+    },
+    "Poultry manure": {
+        "npk": "3.0-2.5-1.5",
+        "primary_nutrients": ["Nitrogen", "Phosphorus"],
+        "secondary_nutrients": ["Calcium"],
+        "micronutrients": ["Zinc", "Copper", "Manganese"],
+        "benefits": "High nitrogen content, quick nutrient release; Rich in calcium; Excellent for nitrogen-deficient soils",
+        "best_for": "Leafy vegetables, nitrogen-demanding crops"
+    },
+    "Neem cake": {
+        "npk": "5.0-1.0-1.5",
+        "primary_nutrients": ["Nitrogen"],
+        "secondary_nutrients": ["Sulfur"],
+        "micronutrients": [],
+        "benefits": "Natural pest repellent, improves nitrogen availability; Slow nitrogen release; Controls soil nematodes",
+        "best_for": "All crops, especially where pest control is needed"
+    },
+    "Bone meal": {
+        "npk": "3.0-15.0-0.0",
+        "primary_nutrients": ["Phosphorus"],
+        "secondary_nutrients": ["Calcium"],
+        "micronutrients": [],
+        "benefits": "Excellent phosphorus source, promotes root development and flowering; Slow release; Adds calcium",
+        "best_for": "Flowering plants, root vegetables, phosphorus-deficient soils"
+    },
+    "Mustard cake": {
+        "npk": "5.0-2.0-1.0",
+        "primary_nutrients": ["Nitrogen", "Phosphorus"],
+        "secondary_nutrients": ["Sulfur"],
+        "micronutrients": [],
+        "benefits": "High nitrogen content, pest deterrent properties; Improves soil structure; Natural nematicide",
+        "best_for": "Vegetables, oilseed crops"
+    },
+    "Green manure": {
+        "npk": "0.5-0.2-0.3",
+        "primary_nutrients": ["Nitrogen"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Fixes atmospheric nitrogen (if legumes), adds organic matter, suppresses weeds; Improves soil structure",
+        "best_for": "All field crops, soil rejuvenation"
+    },
+    "Banana wastes": {
+        "npk": "0.5-0.3-3.5",
+        "primary_nutrients": ["Potassium"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Excellent potassium source, improves fruit quality; Enhances disease resistance",
+        "best_for": "Fruit crops, potassium-deficient soils"
+    },
+    "Azolla": {
+        "npk": "4.0-0.5-2.0",
+        "primary_nutrients": ["Nitrogen"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Nitrogen-fixing aquatic fern, rapid biomass production; Free nitrogen from atmosphere",
+        "best_for": "Rice paddies, wetland crops"
+    },
+    "PSB (Phosphate Solubilizing Bacteria)": {
+        "npk": "0.0-0.0-0.0",
+        "primary_nutrients": ["Phosphorus (makes available)"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Converts unavailable soil phosphorus to plant-available forms; Improves phosphorus uptake efficiency",
+        "best_for": "All crops in phosphorus-rich but unavailable soils"
+    },
+    "Rhizobium biofertilizer": {
+        "npk": "0.0-0.0-0.0",
+        "primary_nutrients": ["Nitrogen (fixes from air)"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Biological nitrogen fixation in legumes; Reduces nitrogen fertilizer requirement; Free atmospheric nitrogen",
+        "best_for": "Legume crops (pulses, beans, peas)"
+    },
+    "Seaweed extract": {
+        "npk": "1.0-0.5-2.0",
+        "primary_nutrients": ["Potassium"],
+        "secondary_nutrients": ["Magnesium", "Calcium"],
+        "micronutrients": ["Iron", "Zinc", "Manganese", "Boron"],
+        "benefits": "Rich in growth hormones, micronutrients, and trace elements; Enhances stress tolerance and plant immunity",
+        "best_for": "High-value crops, stress conditions"
+    },
+    "Fish emulsion": {
+        "npk": "4.0-2.0-1.0",
+        "primary_nutrients": ["Nitrogen", "Phosphorus"],
+        "secondary_nutrients": [],
+        "micronutrients": ["Iron", "Zinc", "Calcium"],
+        "benefits": "Quick-acting liquid fertilizer, balanced nutrients; Promotes vigorous growth",
+        "best_for": "Vegetables, ornamentals"
+    },
+    "Mulch": {
+        "npk": "0.2-0.1-0.2",
+        "primary_nutrients": [],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Conserves soil moisture, suppresses weeds, moderates soil temperature; Slowly adds organic matter",
+        "best_for": "All crops, moisture conservation"
+    },
+    "Cow dung slurry": {
+        "npk": "0.6-0.3-0.4",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Quick nutrient availability in liquid form, improves microbial activity",
+        "best_for": "Quick nutrient boost for all crops"
+    },
+    "Bio-slurry": {
+        "npk": "1.5-1.0-1.0",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Biogas digester byproduct, pathogen-free, rich in available nutrients",
+        "best_for": "All crops, organic farming"
+    },
+    "Trichoderma compost": {
+        "npk": "1.0-0.8-1.0",
+        "primary_nutrients": ["Nitrogen", "Phosphorus", "Potassium"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Contains beneficial Trichoderma fungi for disease control; Improves soil health and nutrient availability",
+        "best_for": "All crops, disease-prone soils"
+    },
+    "Beejamrit": {
+        "npk": "0.5-0.2-0.3",
+        "primary_nutrients": [],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Seed treatment solution, enhances germination and seedling vigor; Provides beneficial microbes",
+        "best_for": "Seed treatment for all crops"
+    },
+    "Panchagavya": {
+        "npk": "0.3-0.2-0.2",
+        "primary_nutrients": [],
+        "secondary_nutrients": [],
+        "micronutrients": ["Various trace elements"],
+        "benefits": "Growth promoter, improves plant immunity, enhances soil microbial activity; Traditional organic input",
+        "best_for": "All crops, foliar spray"
+    },
+    "Jeevamrut": {
+        "npk": "0.8-0.3-0.5",
+        "primary_nutrients": ["Nitrogen"],
+        "secondary_nutrients": [],
+        "micronutrients": [],
+        "benefits": "Liquid manure with beneficial microbes, improves soil fertility and microbial population",
+        "best_for": "All crops, soil drench or irrigation"
+    }
+}
+
 
 # ==================================================================================
 # NPK RATIOS - Nutrient Content of Fertilizers
@@ -233,6 +407,60 @@ def configure_gemini_api():
     
     genai.configure(api_key=api_key)
     return genai.GenerativeModel('gemini-1.5-flash')
+
+
+# ==================================================================================
+# HELPER FUNCTIONS FOR NUTRIENT INFORMATION
+# ==================================================================================
+def get_fertilizer_nutrients(fertilizer_name: str) -> str:
+    """Get nutrient information for a fertilizer"""
+    normalized = normalize_fertilizer_name(fertilizer_name)
+    
+    nutrient_map = {
+        'urea': 'High Nitrogen (46% N)',
+        'diammonium_phosphate_dap': 'Nitrogen (18%) and Phosphorus (46%)',
+        'monoammonium_phosphate_map': 'Nitrogen (11%) and Phosphorus (52%)',
+        'muriate_of_potash_mop': 'High Potassium (60% K₂O)',
+        'sulphate_of_potash_sop': 'Potassium (50% K₂O) and Sulfur',
+        'single_super_phosphate_ssp': 'Phosphorus (16% P₂O₅), Calcium, and Sulfur',
+        'triple_super_phosphate_tsp': 'High Phosphorus (46% P₂O₅)',
+        'ammonium_sulphate': 'Nitrogen (21% N) and Sulfur (24% S)',
+        'calcium_ammonium_nitrate_can': 'Nitrogen (26% N) and Calcium',
+        'npk_10_26_26': 'Balanced NPK (10-26-26)',
+        'npk_12_32_16': 'Balanced NPK (12-32-16)',
+        'npk_20_20_0': 'Nitrogen (20%) and Phosphorus (20%)',
+        'npk_19_19_19': 'Balanced NPK (19-19-19)',
+    }
+    
+    return nutrient_map.get(normalized, f'Essential nutrients from {fertilizer_name}')
+
+
+def get_secondary_nutrients(fertilizer_name: str) -> str:
+    """Get nutrient information for secondary/micronutrient fertilizers"""
+    if not fertilizer_name or fertilizer_name in ['—', 'None', 'NA', 'Not required']:
+        return 'No additional micronutrients needed'
+    
+    nutrients = []
+    fertilizer_lower = fertilizer_name.lower()
+    
+    if 'zinc' in fertilizer_lower:
+        nutrients.append('Zinc (21% Zn)')
+    if 'boron' in fertilizer_lower or 'borax' in fertilizer_lower:
+        nutrients.append('Boron (11% B)')
+    if 'iron' in fertilizer_lower or 'ferrous' in fertilizer_lower:
+        nutrients.append('Iron (19% Fe)')
+    if 'manganese' in fertilizer_lower:
+        nutrients.append('Manganese (30% Mn)')
+    if 'copper' in fertilizer_lower:
+        nutrients.append('Copper (25% Cu)')
+    if 'magnesium' in fertilizer_lower:
+        nutrients.append('Magnesium (9% Mg)')
+    if 'molybdenum' in fertilizer_lower:
+        nutrients.append('Molybdenum (39% Mo)')
+    
+    if nutrients:
+        return ', '.join(nutrients)
+    return f'Micronutrients from {fertilizer_name}'
 
 
 # ==================================================================================
@@ -410,6 +638,93 @@ def get_price(fertilizer_name: str) -> float:
     return DEFAULT_PRICES.get(normalized, 0.0)
 
 
+def calculate_compound_fertilizer_cost(
+    fertilizer_name: str,
+    field_size: float,
+    nutrient_status: str,
+    fertilizer_type: str = "secondary"
+) -> dict:
+    """
+    Calculate cost for compound fertilizers (e.g., "Borax + Ferrous Sulphate + Zinc Sulphate")
+    Returns total cost and breakdown of each component
+    
+    Args:
+        fertilizer_name: Name of compound fertilizer
+        field_size: Field size in hectares
+        nutrient_status: Low/Optimal/High
+        fertilizer_type: primary/secondary/organic
+    
+    Returns:
+        Dict with total_cost, total_quantity, and components list
+    """
+    if not fertilizer_name or fertilizer_name in ['—', 'None', 'NA']:
+        return {
+            "total_cost": 0.0,
+            "total_quantity": 0.0,
+            "components": []
+        }
+    
+    # Check if it's a compound fertilizer
+    if '+' not in fertilizer_name:
+        # Single fertilizer - calculate normally
+        quantity = calculate_fertilizer_quantity(
+            fertilizer_name,
+            field_size,
+            nutrient_status,
+            fertilizer_type
+        )
+        price = get_price(fertilizer_name)
+        cost = quantity * price
+        
+        return {
+            "total_cost": cost,
+            "total_quantity": quantity,
+            "components": [{
+                "name": fertilizer_name,
+                "quantity_kg": quantity,
+                "price_per_kg": price,
+                "cost": cost
+            }]
+        }
+    
+    # Compound fertilizer - split and calculate each component
+    components = [comp.strip() for comp in fertilizer_name.split('+')]
+    component_details = []
+    total_cost = 0.0
+    total_quantity = 0.0
+    
+    for component in components:
+        # Calculate quantity for each component
+        quantity = calculate_fertilizer_quantity(
+            component,
+            field_size,
+            nutrient_status,
+            fertilizer_type
+        )
+        
+        # Get price for each component
+        price = get_price(component)
+        
+        # Calculate cost for this component
+        cost = quantity * price
+        
+        component_details.append({
+            "name": component,
+            "quantity_kg": quantity,
+            "price_per_kg": price,
+            "cost": cost
+        })
+        
+        total_cost += cost
+        total_quantity += quantity
+    
+    return {
+        "total_cost": total_cost,
+        "total_quantity": total_quantity,
+        "components": component_details
+    }
+
+
 def calculate_application_dates(sowing_date_str: str, crop_type: str = "default") -> Dict[str, str]:
     """
     Calculate precise fertilizer application dates based on crop growth stages.
@@ -485,16 +800,23 @@ def calculate_application_dates(sowing_date_str: str, crop_type: str = "default"
     return {
         "primary": f"At sowing: Apply on {at_sowing} (Day 0) | "
                   f"First dose: Apply at {stage_names[0].replace('_', ' ').title()} stage "
-                  f"on {first_stage} (Day {stage_days[0]}) | Tip: {crop_note}",
+                  f"on {first_stage} (Day {stage_days[0]}) | "
+                  f"Expert Tip: {crop_note} | "
+                  f"Best Time: Early morning (6-8 AM) or evening (4-6 PM) | "
+                  f"Weather: Avoid application on very hot days or just before heavy rain",
         
-        "secondary": f"Apply at {stage_names[1].replace('_', ' ').title()} stage "
+        "secondary": f"Recommended: Apply at {stage_names[1].replace('_', ' ').title()} stage "
                     f"on {second_stage} (Day {stage_days[1]}) | "
-                    f"You can also apply at {stage_names[2].replace('_', ' ').title()} stage "
-                    f"on {third_stage} (Day {stage_days[2]}) if needed",
+                    f"Alternative: You can also apply at {stage_names[2].replace('_', ' ').title()} stage "
+                    f"on {third_stage} (Day {stage_days[2]}) if needed | "
+                    f"Application Method: Mix with water for foliar spray or apply to soil and water immediately | "
+                    f"Precaution: Don't apply during flowering stage unless specifically recommended",
         
-        "organics": f"Mix with soil when sowing on {at_sowing} (Day 0) or "
-                   f"apply 7-10 days before sowing for better results. "
-                   f"Mix well with soil at 6-8 inch depth"
+        "organics": f"Best Time: Mix with soil when sowing on {at_sowing} (Day 0) | "
+                   f"Even Better: Apply 7-10 days before sowing for better decomposition | "
+                   f"Method: Mix well with soil at 6-8 inch (15-20 cm) depth | "
+                   f"After Application: Water lightly to help decomposition | "
+                   f"Benefits: Organic matter needs time to break down and release nutrients slowly"
     }
 
 
@@ -659,32 +981,43 @@ Provide recommendations in the following JSON format:
     "primary_fertilizer": {{
         "name": "{ml_prediction.primary_fertilizer}",
         "npk": "Provide NPK ratio like 46-0-0 for Urea",
-        "reason": "Explain why this fertilizer is recommended based on soil nutrient levels (mention the mg/kg values)",
-        "application_method": "Detailed method: when to apply, how to apply (broadcast/banding), and any precautions"
+        "reason": "Explain why this fertilizer is recommended based on soil nutrient levels (mention the mg/kg values of N:{input_data.nitrogen}, P:{input_data.phosphorus}, K:{input_data.potassium}) and the deficiency status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status})",
+        "nutrients_provided": "Clearly list the specific nutrients this fertilizer provides (e.g., 'High Nitrogen (46% N)' for Urea, or 'Nitrogen (18%) and Phosphorus (46%)' for DAP) and their concentration percentages",
+        "benefits": "Explain in 2-3 sentences how this fertilizer helps the {input_data.crop_type} crop: what plant processes it supports (e.g., vegetative growth, root development, flowering), what visible improvements the farmer will see (e.g., greener leaves, stronger stems, better yields), and why it's important for this specific crop and soil condition"
     }},
     "secondary_fertilizer": {{
         "name": "{secondary_fertilizer}",
-        "reason": "Explain why this secondary fertilizer addresses the deficiency",
-        "application_method": "Detailed application instructions specific to this fertilizer"
+        "reason": "Explain why this secondary/micronutrient fertilizer is needed based on soil analysis and what specific deficiency it addresses",
+        "nutrients_provided": "List the specific micronutrients provided (e.g., 'Zinc (21% Zn)', 'Boron (11% B)', 'Iron (19% Fe)') with their concentrations",
+        "benefits": "Explain how these micronutrients help: their role in plant metabolism, enzyme activation, disease resistance, flowering, fruit set, and overall crop quality. Be specific about visible benefits for {input_data.crop_type}"
     }},
     "organic_alternatives": [
         {{
             "name": "Select ONE organic fertilizer from this list that best addresses the SPECIFIC nutrient deficiencies (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) for {input_data.crop_type} in {input_data.soil_type} soil: {', '.join(ORGANIC_ALTERNATIVES)}",
             "quantity_kg": "Calculate realistic quantity for {input_data.field_size} hectares based on the selected organic fertilizer's typical application rate and current soil nutrient levels (N:{input_data.nitrogen} mg/kg, P:{input_data.phosphorus} mg/kg, K:{input_data.potassium} mg/kg)",
-            "reason": "Explain specifically how this organic fertilizer addresses the nutrient status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) and why it's suitable for {input_data.crop_type} in {input_data.soil_type} soil with EC:{input_data.ec} and Temp:{input_data.soil_temperature}°C",
-            "timing": "Specify timing based on sowing date ({input_data.sowing_date}), crop growth stages for {input_data.crop_type}, and current soil temperature ({input_data.soil_temperature}°C)"
+            "npk_content": "Provide the NPK ratio (e.g., 1.5-1.0-1.5)",
+            "primary_nutrients": "List primary nutrients provided (e.g., ['Nitrogen', 'Phosphorus', 'Potassium'])",
+            "benefits": "Explain specific benefits: why use this fertilizer, what problems it solves, and its unique advantages for {input_data.crop_type}",
+            "reason": "Explain specifically how this addresses the nutrient status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) and why it's suitable for {input_data.crop_type} in {input_data.soil_type} soil",
+            "timing": "Specify timing based on sowing date ({input_data.sowing_date}) and crop growth stages for {input_data.crop_type}"
         }},
         {{
-            "name": "Select a DIFFERENT organic fertilizer that complements the primary fertilizer ({ml_prediction.primary_fertilizer}) and addresses secondary needs based on NPK status and soil conditions. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
-            "quantity_kg": "Calculate quantity considering field size ({input_data.field_size} ha), soil EC ({input_data.ec}), and the fact that it's supplementing {ml_prediction.primary_fertilizer}",
-            "reason": "Explain how this complements {ml_prediction.primary_fertilizer} and {secondary_fertilizer}, considering the soil temperature ({input_data.soil_temperature}°C), moisture ({input_data.soil_moisture}%), and pH ({input_data.ph})",
-            "timing": "Provide specific timing that doesn't conflict with {ml_prediction.primary_fertilizer} application and suits {input_data.crop_type} cultivation"
+            "name": "Select a DIFFERENT organic fertilizer that complements the primary fertilizer ({ml_prediction.primary_fertilizer}) and addresses secondary needs. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "quantity_kg": "Calculate quantity considering field size ({input_data.field_size} ha) and the fact that it's supplementing {ml_prediction.primary_fertilizer}",
+            "npk_content": "Provide the NPK ratio",
+            "primary_nutrients": "List primary nutrients provided",
+            "benefits": "Explain specific benefits and why this fertilizer is recommended for this situation",
+            "reason": "Explain how this complements {ml_prediction.primary_fertilizer} and {secondary_fertilizer}",
+            "timing": "Provide specific timing that suits {input_data.crop_type} cultivation"
         }},
         {{
-            "name": "Select a THIRD distinct organic option that provides long-term soil health benefits for {input_data.soil_type} soil growing {input_data.crop_type}. Must be different from previous two. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
-            "quantity_kg": "Calculate based on {input_data.field_size} hectares and soil improvement needs indicated by pH:{input_data.ph}, EC:{input_data.ec}, and current NPK levels",
-            "reason": "Focus on long-term soil conditioning benefits for {input_data.soil_type} soil, considering pH amendment needs ({ml_prediction.ph_amendment}) and overall soil health improvement beyond NPK",
-            "timing": "Suggest optimal application timing that maximizes soil conditioning benefits for {input_data.crop_type} cultivation cycle"
+            "name": "Select a THIRD distinct organic option for long-term soil health. Must be different from previous two. Choose from: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "quantity_kg": "Calculate based on {input_data.field_size} hectares and soil improvement needs",
+            "npk_content": "Provide the NPK ratio",
+            "primary_nutrients": "List primary nutrients provided",
+            "benefits": "Explain specific benefits focusing on long-term soil health, conditioning, and overall crop productivity",
+            "reason": "Focus on long-term soil conditioning benefits for {input_data.soil_type} soil",
+            "timing": "Suggest optimal application timing for maximum soil conditioning benefits"
         }}
     ],
     "soil_recommendations": [
@@ -793,16 +1126,26 @@ def generate_enhanced_recommendation(
     
     # Secondary fertilizer
     print(f"🔍 Secondary fertilizer from model: '{secondary_fertilizer}'")
-    secondary_quantity = calculate_fertilizer_quantity(
+    secondary_result = calculate_compound_fertilizer_cost(
         secondary_fertilizer,
         input_data.field_size,
         ml_prediction.k_status,
         "secondary"
     )
-    secondary_price_per_kg = get_price(secondary_fertilizer)
-    secondary_cost = secondary_quantity * secondary_price_per_kg
-    print(f"   Normalized name: '{normalize_fertilizer_name(secondary_fertilizer)}'")
-    print(f"   Quantity: {secondary_quantity} kg, Price: ₹{secondary_price_per_kg}/kg, Total: ₹{secondary_cost:.2f}")
+    secondary_cost = secondary_result["total_cost"]
+    secondary_quantity = secondary_result["total_quantity"]
+    secondary_components = secondary_result["components"]
+    
+    # Print detailed breakdown
+    print(f"   Total quantity: {secondary_quantity} kg, Total cost: ₹{secondary_cost:.2f}")
+    if len(secondary_components) > 1:
+        print(f"   Component breakdown:")
+        for comp in secondary_components:
+            print(f"     - {comp['name']}: {comp['quantity_kg']} kg × ₹{comp['price_per_kg']}/kg = ₹{comp['cost']:.2f}")
+    else:
+        print(f"   Normalized name: '{normalize_fertilizer_name(secondary_fertilizer)}'")
+        if secondary_components:
+            print(f"   Price: ₹{secondary_components[0]['price_per_kg']}/kg")
     
     # Organic alternatives
     organic_costs = []
@@ -825,11 +1168,17 @@ def generate_enhanced_recommendation(
         org_cost = org_quantity * org_price
         organic_costs.append(org_cost)
         
+        # Get nutrient info from database
+        nutrient_info = ORGANIC_NUTRIENTS.get(org_name, {})
+        
         organic_details.append({
             "name": org_name,
             "amount_kg": org_quantity,
             "price_per_kg": org_price,
             "cost": org_cost,
+            "npk_content": org.get("npk_content", nutrient_info.get("npk", "N/A")),
+            "primary_nutrients": org.get("primary_nutrients", nutrient_info.get("primary_nutrients", [])),
+            "benefits": org.get("benefits", nutrient_info.get("benefits", "Provides organic nutrition and improves soil health")),
             "reason": org.get("reason", ""),
             "timing": org.get("timing", "")
         })
@@ -900,14 +1249,16 @@ def generate_enhanced_recommendation(
             "amount_kg": primary_quantity,
             "npk": gemini_data.get("primary_fertilizer", {}).get("npk", "—"),
             "reason": gemini_data.get("primary_fertilizer", {}).get("reason", ""),
-            "application_method": gemini_data.get("primary_fertilizer", {}).get("application_method", "")
+            "nutrients_provided": gemini_data.get("primary_fertilizer", {}).get("nutrients_provided", ""),
+            "benefits": gemini_data.get("primary_fertilizer", {}).get("benefits", "")
         },
         
         "secondary_fertilizer": {
             "name": secondary_fertilizer if secondary_fertilizer not in ['—', 'None', 'NA'] else "Not required",
             "amount_kg": secondary_quantity,
             "reason": gemini_data.get("secondary_fertilizer", {}).get("reason", ""),
-            "application_method": gemini_data.get("secondary_fertilizer", {}).get("application_method", "")
+            "nutrients_provided": gemini_data.get("secondary_fertilizer", {}).get("nutrients_provided", ""),
+            "benefits": gemini_data.get("secondary_fertilizer", {}).get("benefits", "")
         },
         
         "organic_alternatives": organic_details,
@@ -934,8 +1285,16 @@ def generate_enhanced_recommendation(
                 "secondary": {
                     "fertilizer": secondary_fertilizer,
                     "quantity_kg": secondary_quantity,
-                    "price_per_kg": f"₹{secondary_price_per_kg:.2f}",
-                    "total": f"₹{int(secondary_cost):,}"
+                    "total": f"₹{int(secondary_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in secondary_components
+                    ]
                 },
                 "organics": [
                     {
@@ -987,12 +1346,16 @@ def generate_fallback_recommendation(
         "primary"
     )
     
-    secondary_quantity = calculate_fertilizer_quantity(
+    # Use compound fertilizer calculation for secondary
+    secondary_result = calculate_compound_fertilizer_cost(
         secondary_fertilizer,
         input_data.field_size,
         ml_prediction.k_status,
         "secondary"
     )
+    secondary_cost = secondary_result["total_cost"]
+    secondary_quantity = secondary_result["total_quantity"]
+    secondary_components = secondary_result["components"]
     
     # Select organic alternatives based on soil conditions and crop type
     organic_alternatives_map = {
@@ -1090,21 +1453,26 @@ def generate_fallback_recommendation(
             elif input_data.ec > 2.0:
                 reasons.append("Helps reduce soil salinity")
         
+        # Get nutrient info from database
+        nutrient_info = ORGANIC_NUTRIENTS.get(org_name, {})
+        
         organic_details.append({
             "name": org_name,
             "amount_kg": org_quantity,
             "price_per_kg": org_price,
             "cost": org_cost,
+            "npk_content": nutrient_info.get("npk", "N/A"),
+            "primary_nutrients": nutrient_info.get("primary_nutrients", []),
+            "benefits": nutrient_info.get("benefits", "Provides organic nutrition and improves soil health"),
             "reason": "; ".join(reasons),
             "timing": f"Apply 3-4 weeks before sowing (considering {input_data.crop_type} cultivation and soil temp: {input_data.soil_temperature}°C)"
         })
     
     # Calculate costs
     primary_price = get_price(ml_prediction.primary_fertilizer)
-    secondary_price = get_price(secondary_fertilizer)
     
     primary_cost = primary_quantity * primary_price
-    secondary_cost = secondary_quantity * secondary_price
+    # secondary_cost already calculated in secondary_result
     total_organic_cost = sum(organic_costs)
     total_cost = primary_cost + secondary_cost + total_organic_cost
     
@@ -1142,14 +1510,16 @@ def generate_fallback_recommendation(
             "name": ml_prediction.primary_fertilizer,
             "amount_kg": primary_quantity,
             "npk": "Check fertilizer label",
-            "reason": f"Recommended based on {ml_prediction.n_status} nitrogen status",
-            "application_method": "Apply in split doses during vegetative growth"
+            "reason": f"Recommended based on {ml_prediction.n_status} nitrogen status (N: {input_data.nitrogen} mg/kg, P: {input_data.phosphorus} mg/kg, K: {input_data.potassium} mg/kg)",
+            "nutrients_provided": get_fertilizer_nutrients(ml_prediction.primary_fertilizer),
+            "benefits": f"Addresses nutrient deficiency in {input_data.crop_type}, promotes healthy growth, and improves yield potential based on {input_data.soil_type} soil conditions"
         },
         "secondary_fertilizer": {
             "name": secondary_fertilizer,
             "amount_kg": secondary_quantity,
-            "reason": f"Addresses micronutrient deficiencies based on soil analysis",
-            "application_method": "Apply during active growth phase"
+            "reason": f"Addresses micronutrient deficiencies based on soil analysis for {input_data.crop_type}",
+            "nutrients_provided": get_secondary_nutrients(secondary_fertilizer),
+            "benefits": "Improves enzyme activation, enhances disease resistance, promotes better flowering and fruit set, and prevents micronutrient deficiency symptoms"
         },
         "organic_alternatives": organic_details,
         "application_timing": {
@@ -1162,7 +1532,38 @@ def generate_fallback_recommendation(
             "secondary_fertilizer": f"₹{int(secondary_cost):,}",
             "organic_options": f"₹{int(total_organic_cost):,}",
             "total_estimate": f"₹{int(total_cost):,}",
-            "field_size": f"For {input_data.field_size:.2f} hectares"
+            "field_size": f"For {input_data.field_size:.2f} hectares",
+            "breakdown": {
+                "primary": {
+                    "fertilizer": ml_prediction.primary_fertilizer,
+                    "quantity_kg": primary_quantity,
+                    "price_per_kg": f"₹{primary_price:.2f}",
+                    "total": f"₹{int(primary_cost):,}"
+                },
+                "secondary": {
+                    "fertilizer": secondary_fertilizer,
+                    "quantity_kg": secondary_quantity,
+                    "total": f"₹{int(secondary_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in secondary_components
+                    ]
+                },
+                "organics": [
+                    {
+                        "fertilizer": org["name"],
+                        "quantity_kg": org["amount_kg"],
+                        "price_per_kg": f"₹{org['price_per_kg']:.2f}",
+                        "total": f"₹{int(org['cost']):,}"
+                    }
+                    for org in organic_details
+                ]
+            }
         },
         "_metadata": {
             "generated_at": datetime.now().isoformat(),
