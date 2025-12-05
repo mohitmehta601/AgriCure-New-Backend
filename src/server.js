@@ -8,6 +8,7 @@ const userRoutes = require('./routes/users');
 const farmRoutes = require('./routes/farms');
 const recommendationRoutes = require('./routes/recommendations');
 const productKeyRoutes = require('./routes/productKeys');
+const fertilizerMLRoutes = require('./routes/fertilizerML');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/farms', farmRoutes);
 app.use('/api/recommendations', recommendationRoutes);
 app.use('/api/product-keys', productKeyRoutes);
+app.use('/api/fertilizer-ml', fertilizerMLRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -65,7 +65,10 @@ class PrimaryFertilizerModel:
         """Load pre-trained model or train if not available"""
         try:
             # Try to load the dataset and train
-            df = pd.read_csv('Primary and pH Dataset.csv')
+            # Get the directory where this script is located
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            dataset_path = os.path.join(script_dir, 'Primary and pH Dataset.csv')
+            df = pd.read_csv(dataset_path)
             print("✅ Dataset loaded successfully")
             
             # Prepare features and targets

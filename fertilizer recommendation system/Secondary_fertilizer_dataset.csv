@@ -1,0 +1,1009 @@
+Soil_Type,pH_Range,EC_Range_µS_cm,Crop_Type,Zn_Status,Fe_Status,Mn_Status,Cu_Status,B_Status,Mo_Status,Cl_Status,Ni_Status
+Alluvial,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),mustard,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alluvial,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alluvial,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Low,Normal,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),mustard,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),soyabean,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),soyabean,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Normal,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Black,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Black,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Black,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Black,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),wheat,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),barley,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),jowar,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),bajra,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),ragi,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),groundnut,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),mustard,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),soyabean,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),cotton,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),chickpea,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),moong,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),garlic,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Low (<500),onion,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),barley,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),jowar,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),bajra,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),ragi,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),groundnut,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),mustard,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),soyabean,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),cotton,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),chickpea,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),moong,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),mustard,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),soyabean,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),groundnut,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),mustard,Normal,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),soyabean,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),chickpea,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),moong,Normal,Low,Low,Normal,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Low,Normal,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),mustard,Normal,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),soyabean,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Red,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Red,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Red,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Laterite,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),maize,Low,Normal,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),barley,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),jowar,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),bajra,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),ragi,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),groundnut,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),mustard,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),soyabean,Normal,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),cotton,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),chickpea,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),moong,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),mustard,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),soyabean,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Normal,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),groundnut,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),mustard,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),soyabean,Normal,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),chickpea,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),moong,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),mustard,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),soyabean,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Laterite,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Laterite,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Arid,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),wheat,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),barley,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),jowar,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),bajra,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),ragi,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),mustard,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),cotton,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),moong,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),garlic,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Low (<500),onion,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),maize,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),barley,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),jowar,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),bajra,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),ragi,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),groundnut,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),mustard,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),cotton,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),chickpea,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),moong,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),moong,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),groundnut,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),mustard,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Normal,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),chickpea,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),moong,Low,Normal,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Low,Normal
+Arid,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Low,Low
+Arid,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Low,Low
+Arid,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Low,Low
+Clayey,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),barley,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),jowar,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),bajra,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),ragi,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),soyabean,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),maize,Low,Normal,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),barley,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),jowar,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),bajra,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),ragi,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),groundnut,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),mustard,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),soyabean,Normal,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),cotton,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),chickpea,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),moong,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),mustard,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),soyabean,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Normal,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Normal,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Normal,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Normal,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Normal,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),groundnut,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),mustard,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),soyabean,Normal,Low,Normal,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Normal,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),chickpea,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),moong,Normal,Normal,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Normal,Normal,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),groundnut,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),mustard,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),soyabean,Normal,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Normal,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),chickpea,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),moong,Normal,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Clayey,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Low
+Clayey,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Acidic (<6.0),Low (<500),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),mustard,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Low (<500),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),Medium (500-2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),rice,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),wheat,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),maize,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),barley,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),jowar,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),bajra,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),ragi,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),mustard,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),sugarcane,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),cotton,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),garlic,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Acidic (<6.0),High (>2000),onion,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Neutral (6.0-7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Normal
+Alkaline soil,Alkaline (>7.5),Low (<500),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Low (<500),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),Medium (500-2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),rice,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),wheat,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),maize,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),barley,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),jowar,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),bajra,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),ragi,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),groundnut,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),mustard,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),soyabean,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),sugarcane,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),cotton,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),chickpea,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),moong,Low,Low,Low,Low,Low,Low,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),garlic,Low,Low,Low,Low,Low,Normal,Normal,Low
+Alkaline soil,Alkaline (>7.5),High (>2000),onion,Low,Low,Low,Low,Low,Normal,Normal,Low

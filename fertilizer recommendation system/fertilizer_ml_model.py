@@ -24,33 +24,51 @@ print(f"\nFirst few rows:")
 print(df.head())
 
 # Separate features and targets
-feature_cols = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
-                'Soil_Type', 'Crop_Type', 'pH', 'Electrical_Conductivity', 
-                'Soil_Moisture', 'Soil_Temperture']
+# For Primary_Fertilizer: use only 5 features
+feature_cols_primary = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
+                        'Soil_Type', 'Crop_Type']
+
+# For other targets (N_Status, P_Status, K_Status, pH_Amendment): use all 9 features
+feature_cols_all = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
+                    'Soil_Type', 'Crop_Type', 'pH', 'Electrical_Conductivity', 
+                    'Soil_Moisture', 'Soil_Temperture']
 
 target_cols = ['N_Status', 'P_Status', 'K_Status', 'Primary_Fertilizer', 'pH_Amendment']
 
-X = df[feature_cols].copy()
+# Define which features to use for each target
+target_feature_mapping = {
+    'Primary_Fertilizer': feature_cols_primary,
+    'N_Status': feature_cols_all,
+    'P_Status': feature_cols_all,
+    'K_Status': feature_cols_all,
+    'pH_Amendment': feature_cols_all
+}
+
 y = df[target_cols].copy()
 
-print(f"\nFeatures shape: {X.shape}")
-print(f"Targets shape: {y.shape}")
+print(f"\nPrimary_Fertilizer features (5): {feature_cols_primary}")
+print(f"Other targets features (9): {feature_cols_all}")
+print(f"Targets: {target_cols}")
 
 # Identify categorical columns
 categorical_features = ['Soil_Type', 'Crop_Type']
-categorical_indices = [X.columns.get_loc(col) for col in categorical_features]
 
-# Encode categorical features for models that need it
-X_encoded = X.copy()
+# Prepare encoded versions for all features
+X_all = df[feature_cols_all].copy()
+X_primary = df[feature_cols_primary].copy()
+
+X_all_encoded = X_all.copy()
+X_primary_encoded = X_primary.copy()
 label_encoders_features = {}
 
 for col in categorical_features:
     le = LabelEncoder()
-    X_encoded[col] = le.fit_transform(X[col])
+    le.fit(df[col])  # Fit on all data
+    X_all_encoded[col] = le.transform(X_all[col])
+    X_primary_encoded[col] = le.transform(X_primary[col])
     label_encoders_features[col] = le
 
 print(f"\nCategorical features: {categorical_features}")
-print(f"Categorical feature indices: {categorical_indices}")
 
 # Encode target variables
 label_encoders_targets = {}
@@ -81,14 +99,24 @@ for target in target_cols:
     print(f"TARGET: {target}")
     print(f"{'='*80}")
     
+    # Select appropriate features for this target
+    if target == 'Primary_Fertilizer':
+        X_use = X_primary
+        X_use_encoded = X_primary_encoded
+        print(f"Using 5 features: {feature_cols_primary}")
+    else:
+        X_use = X_all
+        X_use_encoded = X_all_encoded
+        print(f"Using 9 features: {feature_cols_all}")
+    
     y_target = y_encoded[target].values
     n_classes = len(np.unique(y_target))
     
     # Initialize OOF prediction arrays for each model
-    oof_rf = np.zeros(len(X))
-    oof_xgb = np.zeros(len(X))
-    oof_cat = np.zeros(len(X))
-    oof_lgb = np.zeros(len(X))
+    oof_rf = np.zeros(len(X_use))
+    oof_xgb = np.zeros(len(X_use))
+    oof_cat = np.zeros(len(X_use))
+    oof_lgb = np.zeros(len(X_use))
     
     # Store fold scores
     fold_scores = {'rf': [], 'xgb': [], 'cat': [], 'lgb': []}
@@ -100,15 +128,15 @@ for target in target_cols:
     models_lgb = []
     
     # 5-Fold Cross-Validation
-    for fold, (train_idx, val_idx) in enumerate(skf.split(X_encoded, y_target), 1):
+    for fold, (train_idx, val_idx) in enumerate(skf.split(X_use_encoded, y_target), 1):
         print(f"\n--- Fold {fold}/{n_splits} ---")
         
-        X_train, X_val = X_encoded.iloc[train_idx], X_encoded.iloc[val_idx]
+        X_train, X_val = X_use_encoded.iloc[train_idx], X_use_encoded.iloc[val_idx]
         y_train, y_val = y_target[train_idx], y_target[val_idx]
         
         # Get original categorical data for CatBoost
-        X_train_cat = X.iloc[train_idx].copy()
-        X_val_cat = X.iloc[val_idx].copy()
+        X_train_cat = X_use.iloc[train_idx].copy()
+        X_val_cat = X_use.iloc[val_idx].copy()
         
         # ===== Random Forest =====
         print("Training Random Forest...")
@@ -309,35 +337,74 @@ print("="*80)
 
 # ===== PREDICTION FUNCTION =====
 def predict_fertilizer(nitrogen, phosphorus, potassium, soil_type, crop_type, 
-                       ph, electrical_conductivity, soil_moisture, soil_temperature):
+                       ph=None, electrical_conductivity=None, soil_moisture=None, soil_temperature=None):
     """
     Predict fertilizer recommendations for given input parameters
     
+    Args:
+        nitrogen: Nitrogen level in mg/kg
+        phosphorus: Phosphorus level in mg/kg
+        potassium: Potassium level in mg/kg
+        soil_type: Type of soil (e.g., 'Alluvial', 'Black', 'Red', etc.)
+        crop_type: Type of crop (e.g., 'Wheat', 'Rice', 'Maize', etc.)
+        ph: pH level (optional, required for N_Status, P_Status, K_Status, pH_Amendment)
+        electrical_conductivity: EC value (optional, required for other targets)
+        soil_moisture: Soil moisture % (optional, required for other targets)
+        soil_temperature: Soil temperature (optional, required for other targets)
+    
     Returns:
-        Dictionary with predictions from all models and ensemble
+        Dictionary with predictions from all models and ensemble for each target
     """
-    # Create input dataframe
-    input_data = pd.DataFrame({
+    # Create input dataframe for Primary_Fertilizer (5 features)
+    input_data_primary = pd.DataFrame({
         'Nitrogen(mg/kg)': [nitrogen],
         'Phosphorus(mg/kg)': [phosphorus],
         'Potassium(mg/kg)': [potassium],
         'Soil_Type': [soil_type],
-        'Crop_Type': [crop_type],
-        'pH': [ph],
-        'Electrical_Conductivity': [electrical_conductivity],
-        'Soil_Moisture': [soil_moisture],
-        'Soil_Temperture': [soil_temperature]
+        'Crop_Type': [crop_type]
     })
     
+    # Create input dataframe for other targets (9 features) if all params provided
+    input_data_all = None
+    if all(v is not None for v in [ph, electrical_conductivity, soil_moisture, soil_temperature]):
+        input_data_all = pd.DataFrame({
+            'Nitrogen(mg/kg)': [nitrogen],
+            'Phosphorus(mg/kg)': [phosphorus],
+            'Potassium(mg/kg)': [potassium],
+            'Soil_Type': [soil_type],
+            'Crop_Type': [crop_type],
+            'pH': [ph],
+            'Electrical_Conductivity': [electrical_conductivity],
+            'Soil_Moisture': [soil_moisture],
+            'Soil_Temperture': [soil_temperature]
+        })
+    
     # Encode for non-CatBoost models
-    input_encoded = input_data.copy()
+    input_primary_encoded = input_data_primary.copy()
     for col in categorical_features:
-        input_encoded[col] = label_encoders_features[col].transform(input_data[col])
+        input_primary_encoded[col] = label_encoders_features[col].transform(input_data_primary[col])
+    
+    if input_data_all is not None:
+        input_all_encoded = input_data_all.copy()
+        for col in categorical_features:
+            input_all_encoded[col] = label_encoders_features[col].transform(input_data_all[col])
     
     results = {}
     
     for target in target_cols:
+        # Skip targets that need all 9 features if not all params provided
+        if target != 'Primary_Fertilizer' and input_data_all is None:
+            continue
+            
         target_results = {}
+        
+        # Select appropriate input data
+        if target == 'Primary_Fertilizer':
+            input_for_pred = input_data_primary
+            input_for_pred_encoded = input_primary_encoded
+        else:
+            input_for_pred = input_data_all
+            input_for_pred_encoded = input_all_encoded
         
         # Get predictions from all folds and average
         for model_type in ['rf', 'xgb', 'cat', 'lgb']:
@@ -345,9 +412,9 @@ def predict_fertilizer(nitrogen, phosphorus, potassium, soil_type, crop_type,
             
             for i, model in enumerate(trained_models[target][model_type]):
                 if model_type == 'cat':
-                    pred = model.predict(input_data)[0]
+                    pred = model.predict(input_for_pred)[0]
                 else:
-                    pred = model.predict(input_encoded)[0]
+                    pred = model.predict(input_for_pred_encoded)[0]
                 fold_predictions.append(pred)
             
             # Average prediction across folds (majority vote)
@@ -370,7 +437,31 @@ print("\n" + "="*80)
 print("EXAMPLE PREDICTION")
 print("="*80)
 
-example_input = {
+# Example 1: Primary_Fertilizer only (5 features)
+print("\n--- Example 1: Primary Fertilizer Only (5 features) ---")
+example_input_primary = {
+    'nitrogen': 126.39,
+    'phosphorus': 7.18,
+    'potassium': 181.53,
+    'soil_type': 'Alluvial',
+    'crop_type': 'Barley'
+}
+
+print("\nInput Parameters:")
+for key, value in example_input_primary.items():
+    print(f"  {key}: {value}")
+
+predictions_primary = predict_fertilizer(**example_input_primary)
+
+print("\nPredictions:")
+for target, preds in predictions_primary.items():
+    print(f"\n{target}:")
+    for model, pred in preds.items():
+        print(f"  {model.upper():10s}: {pred}")
+
+# Example 2: All targets (9 features)
+print("\n\n--- Example 2: All Predictions (9 features) ---")
+example_input_all = {
     'nitrogen': 126.39,
     'phosphorus': 7.18,
     'potassium': 181.53,
@@ -383,13 +474,13 @@ example_input = {
 }
 
 print("\nInput Parameters:")
-for key, value in example_input.items():
+for key, value in example_input_all.items():
     print(f"  {key}: {value}")
 
-predictions = predict_fertilizer(**example_input)
+predictions_all = predict_fertilizer(**example_input_all)
 
 print("\nPredictions:")
-for target, preds in predictions.items():
+for target, preds in predictions_all.items():
     print(f"\n{target}:")
     for model, pred in preds.items():
         print(f"  {model.upper():10s}: {pred}")

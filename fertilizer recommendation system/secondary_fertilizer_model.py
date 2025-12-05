@@ -1,21 +1,37 @@
 """
 Secondary Fertilizer (Micronutrient) Recommendation Model
 This model predicts micronutrient fertilizer requirements based on soil parameters and crop type.
+Uses dataset-based lookup with rule-based validation.
 """
 
 import pandas as pd
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
+import os
 
 
 class SecondaryFertilizerModel:
     """
     Model to predict secondary fertilizer (micronutrient) requirements
-    based on soil conditions and crop type.
+    based on soil conditions and crop type using dataset lookup.
     """
     
-    def __init__(self):
-        """Initialize the model with crop-specific micronutrient requirements."""
+    def __init__(self, dataset_path: str = None):
+        """Initialize the model with dataset and crop-specific micronutrient requirements."""
+        
+        # Load the dataset
+        if dataset_path is None:
+            dataset_path = os.path.join(os.path.dirname(__file__), 'Secondary_fertilizer_dataset.csv')
+        
+        try:
+            self.dataset = pd.read_csv(dataset_path)
+            print(f"✓ Dataset loaded successfully: {len(self.dataset)} records")
+        except FileNotFoundError:
+            print(f"⚠ Warning: Dataset file not found at '{dataset_path}'. Using rule-based mode only.")
+            self.dataset = None
+        except Exception as e:
+            print(f"⚠ Error loading dataset: {e}. Using rule-based mode only.")
+            self.dataset = None
         
         # Crop-wise micronutrient requirements mapping
         self.crop_micronutrients = {
@@ -52,20 +68,111 @@ class SecondaryFertilizerModel:
             'Mo': 'Ammonium Molybdate',
             'Ca': 'Calcium Chloride',
             'Mg': 'Magnesium Sulphate',
-            'Ni': 'Nickel Sulphate'
+            'Ni': 'Nickel Sulphate',
+            'Cl': 'Potassium Chloride'
         }
         
-    def identify_deficiencies(self, 
-                            nitrogen: float,
-                            phosphorus: float,
-                            potassium: float,
-                            pH: float,
-                            ec: float,
-                            moisture: float,
-                            temperature: float,
-                            crop_type: str) -> List[str]:
+        # Soil type mapping
+        self.soil_types = ['Alluvial', 'Black', 'Red', 'Laterite', 'Desert', 'Mountain']
+    
+    def categorize_ph(self, pH: float) -> str:
         """
-        Identify micronutrient deficiencies based on soil parameters and mapping rules.
+        Categorize pH value into ranges used in dataset.
+        
+        Ranges:
+        - Acidic (<6.0)
+        - Neutral (6.0-7.5)
+        - Alkaline (>7.5)
+        """
+        if pH < 6.0:
+            return "Acidic (<6.0)"
+        elif 6.0 <= pH <= 7.5:
+            return "Neutral (6.0-7.5)"
+        else:
+            return "Alkaline (>7.5)"
+    
+    def categorize_ec(self, ec: float) -> str:
+        """
+        Categorize EC value into ranges used in dataset.
+        
+        Ranges (in µS/cm):
+        - Low (<500)
+        - Medium (500-2000)
+        - High (>2000)
+        """
+        if ec < 500:
+            return "Low (<500)"
+        elif 500 <= ec <= 2000:
+            return "Medium (500-2000)"
+        else:
+            return "High (>2000)"
+    
+    def get_deficiencies_from_dataset(self, 
+                                     soil_type: str,
+                                     ph_range: str,
+                                     ec_range: str,
+                                     crop_type: str) -> Optional[List[str]]:
+        """
+        Query dataset for micronutrient deficiencies based on soil and crop parameters.
+        
+        Parameters:
+        -----------
+        soil_type : str
+            Soil type (e.g., 'Alluvial', 'Black', 'Red')
+        ph_range : str
+            pH range category
+        ec_range : str
+            EC range category
+        crop_type : str
+            Crop type
+            
+        Returns:
+        --------
+        List[str] or None
+            List of deficient micronutrients or None if no match found
+        """
+        if self.dataset is None:
+            return None
+        
+        # Normalize crop type to lowercase for matching
+        crop_normalized = crop_type.strip().lower()
+        
+        # Query the dataset
+        match = self.dataset[
+            (self.dataset['Soil_Type'].str.lower() == soil_type.lower()) &
+            (self.dataset['pH_Range'] == ph_range) &
+            (self.dataset['EC_Range_µS_cm'] == ec_range) &
+            (self.dataset['Crop_Type'].str.lower() == crop_normalized)
+        ]
+        
+        if match.empty:
+            return None
+        
+        # Extract deficiencies from status columns
+        status_columns = ['Zn_Status', 'Fe_Status', 'Mn_Status', 'Cu_Status', 
+                         'B_Status', 'Mo_Status', 'Cl_Status', 'Ni_Status']
+        
+        deficiencies = []
+        for col in status_columns:
+            if col in match.columns:
+                status_value = match[col].values[0]
+                if status_value == 'Low':
+                    # Extract nutrient name (remove '_Status' suffix)
+                    nutrient = col.replace('_Status', '')
+                    deficiencies.append(nutrient)
+        
+        return deficiencies
+    
+    def identify_deficiencies_rule_based(self,
+                                         nitrogen: float,
+                                         phosphorus: float,
+                                         potassium: float,
+                                         pH: float,
+                                         ec: float,
+                                         moisture: float,
+                                         temperature: float) -> List[str]:
+        """
+        Identify micronutrient deficiencies using rule-based logic (fallback method).
         
         Parameters:
         -----------
@@ -83,8 +190,6 @@ class SecondaryFertilizerModel:
             Soil Moisture in %
         temperature : float
             Soil Temperature in °C
-        crop_type : str
-            Type of crop to be grown
             
         Returns:
         --------
@@ -134,6 +239,87 @@ class SecondaryFertilizerModel:
         if ec < 200:
             deficiencies.update(['Zn', 'Fe'])
         
+        return list(deficiencies)
+    
+    def identify_deficiencies(self, 
+                            nitrogen: float,
+                            phosphorus: float,
+                            potassium: float,
+                            pH: float,
+                            ec: float,
+                            moisture: float,
+                            temperature: float,
+                            crop_type: str,
+                            soil_type: str = 'Alluvial') -> List[str]:
+        """
+        Identify micronutrient deficiencies using dataset-based lookup with rule-based fallback.
+        
+        Parameters:
+        -----------
+        nitrogen : float
+            Nitrogen content in mg/kg
+        phosphorus : float
+            Phosphorus content in mg/kg
+        potassium : float
+            Potassium content in mg/kg
+        pH : float
+            Soil pH value
+        ec : float
+            Electrical Conductivity in µS/cm
+        moisture : float
+            Soil Moisture in %
+        temperature : float
+            Soil Temperature in °C
+        crop_type : str
+            Type of crop to be grown
+        soil_type : str, optional
+            Soil type (default: 'Alluvial')
+            
+        Returns:
+        --------
+        List[str]
+            List of deficient micronutrients
+        """
+        
+        # Step 1: Try dataset-based lookup first
+        ph_range = self.categorize_ph(pH)
+        ec_range = self.categorize_ec(ec)
+        
+        dataset_deficiencies = self.get_deficiencies_from_dataset(
+            soil_type=soil_type,
+            ph_range=ph_range,
+            ec_range=ec_range,
+            crop_type=crop_type
+        )
+        
+        if dataset_deficiencies is not None:
+            # Dataset match found - use it as primary source
+            deficiencies = set(dataset_deficiencies)
+            
+            # Augment with rule-based logic for extreme conditions
+            if temperature < 15 and pH > 7.5:
+                deficiencies.add('Fe')
+            
+            if moisture < 12:
+                deficiencies.add('B')
+            
+            if nitrogen > 300:
+                deficiencies.update(['Zn', 'Cu'])
+            
+            if potassium > 350 and 250 <= ec <= 750:
+                deficiencies.add('Mg')
+        else:
+            # No dataset match - use rule-based logic
+            deficiencies = set(self.identify_deficiencies_rule_based(
+                nitrogen=nitrogen,
+                phosphorus=phosphorus,
+                potassium=potassium,
+                pH=pH,
+                ec=ec,
+                moisture=moisture,
+                temperature=temperature
+            ))
+        
         # Filter deficiencies based on crop requirements
         crop_type_normalized = crop_type.strip().title()
         if crop_type_normalized in self.crop_micronutrients:
@@ -154,9 +340,10 @@ class SecondaryFertilizerModel:
                            pH: float,
                            ec: float,
                            moisture: float,
-                           temperature: float) -> str:
+                           temperature: float,
+                           soil_type: str = 'Alluvial') -> str:
         """
-        Recommend secondary fertilizer based on input parameters.
+        Recommend secondary fertilizer based on input parameters using dataset lookup.
         
         Parameters:
         -----------
@@ -176,6 +363,8 @@ class SecondaryFertilizerModel:
             Soil Moisture in %
         temperature : float
             Soil Temperature in °C
+        soil_type : str, optional
+            Soil type (default: 'Alluvial')
             
         Returns:
         --------
@@ -183,7 +372,7 @@ class SecondaryFertilizerModel:
             Recommended fertilizer(s) in format "Fertilizer1 + Fertilizer2 + ..."
         """
         
-        # Identify deficiencies
+        # Identify deficiencies using dataset-based lookup
         deficiencies = self.identify_deficiencies(
             nitrogen=nitrogen,
             phosphorus=phosphorus,
@@ -192,7 +381,8 @@ class SecondaryFertilizerModel:
             ec=ec,
             moisture=moisture,
             temperature=temperature,
-            crop_type=crop_type
+            crop_type=crop_type,
+            soil_type=soil_type
         )
         
         if not deficiencies:
@@ -232,7 +422,8 @@ class SecondaryFertilizerModel:
             pH=input_data.get('pH', 7.0),
             ec=input_data.get('Electrical_Conductivity', 0),
             moisture=input_data.get('Soil_Moisture', 0),
-            temperature=input_data.get('Soil_Temperature', 25)
+            temperature=input_data.get('Soil_Temperature', 25),
+            soil_type=input_data.get('Soil_Type', 'Alluvial')
         )
     
     def predict_batch(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -263,7 +454,8 @@ class SecondaryFertilizerModel:
                 pH=row.get('pH', 7.0),
                 ec=row.get('Electrical_Conductivity', 0),
                 moisture=row.get('Soil_Moisture', 0),
-                temperature=row.get('Soil_Temperature', 25)
+                temperature=row.get('Soil_Temperature', 25),
+                soil_type=row.get('Soil_Type', 'Alluvial')
             )
             predictions.append(prediction)
         
@@ -296,10 +488,13 @@ if __name__ == "__main__":
     
     print("=" * 70)
     print("SECONDARY FERTILIZER RECOMMENDATION SYSTEM")
+    print("(Dataset-Based with Rule-Based Fallback)")
     print("=" * 70)
     print("\nAvailable crops:")
     print("Rice, Wheat, Maize, Barley, Jowar, Bajra, Ragi, Groundnut,")
     print("Mustard, Soybean, Sugarcane, Cotton, Chickpea, Moong, Garlic, Onion")
+    print("\nAvailable soil types:")
+    print("Alluvial, Black, Red, Laterite, Desert, Mountain")
     print("=" * 70)
     
     try:
@@ -310,6 +505,7 @@ if __name__ == "__main__":
         phosphorus = float(input("Phosphorus (mg/kg): "))
         potassium = float(input("Potassium (mg/kg): "))
         crop_type = input("Crop Type: ").strip()
+        soil_type = input("Soil Type [default: Alluvial]: ").strip() or 'Alluvial'
         pH = float(input("pH: "))
         ec = float(input("Electrical Conductivity (µS/cm): "))
         moisture = float(input("Soil Moisture (%): "))
@@ -318,6 +514,15 @@ if __name__ == "__main__":
         print("\n" + "=" * 70)
         print("PROCESSING...")
         print("=" * 70)
+        
+        # Categorize inputs
+        ph_range = model.categorize_ph(pH)
+        ec_range = model.categorize_ec(ec)
+        
+        print(f"\n📊 Categorized Parameters:")
+        print(f"   pH Range: {ph_range}")
+        print(f"   EC Range: {ec_range}")
+        print(f"   Soil Type: {soil_type}")
         
         # Get recommendation
         recommendation = model.recommend_fertilizer(
@@ -328,24 +533,30 @@ if __name__ == "__main__":
             pH=pH,
             ec=ec,
             moisture=moisture,
-            temperature=temperature
+            temperature=temperature,
+            soil_type=soil_type
         )
         
         # Display results
         print("\n" + "=" * 70)
         print("RECOMMENDATION RESULTS")
         print("=" * 70)
-        print(f"\nCrop: {crop_type}")
-        print(f"Soil pH: {pH}")
-        print(f"Nitrogen: {nitrogen} mg/kg")
-        print(f"Phosphorus: {phosphorus} mg/kg")
-        print(f"Potassium: {potassium} mg/kg")
-        print(f"EC: {ec} µS/cm")
-        print(f"Moisture: {moisture}%")
-        print(f"Temperature: {temperature}°C")
+        print(f"\n📍 Location & Soil Information:")
+        print(f"   Soil Type: {soil_type}")
+        print(f"   pH: {pH} ({ph_range})")
+        print(f"   EC: {ec} µS/cm ({ec_range})")
+        print(f"\n🌱 Crop Information:")
+        print(f"   Crop: {crop_type}")
+        print(f"\n🧪 Soil Nutrients:")
+        print(f"   Nitrogen: {nitrogen} mg/kg")
+        print(f"   Phosphorus: {phosphorus} mg/kg")
+        print(f"   Potassium: {potassium} mg/kg")
+        print(f"\n🌡️ Environmental Conditions:")
+        print(f"   Moisture: {moisture}%")
+        print(f"   Temperature: {temperature}°C")
         print("\n" + "-" * 70)
-        print(f"RECOMMENDED SECONDARY FERTILIZER:")
-        print(f"{recommendation}")
+        print(f"💊 RECOMMENDED SECONDARY FERTILIZER:")
+        print(f"   {recommendation}")
         print("=" * 70)
         
         # Show identified deficiencies
@@ -357,11 +568,13 @@ if __name__ == "__main__":
             ec=ec,
             moisture=moisture,
             temperature=temperature,
-            crop_type=crop_type
+            crop_type=crop_type,
+            soil_type=soil_type
         )
         
         if deficiencies:
-            print(f"\nIdentified Micronutrient Deficiencies: {', '.join(deficiencies)}")
+            print(f"\n🔍 Identified Micronutrient Deficiencies:")
+            print(f"   {', '.join(deficiencies)}")
             print("=" * 70)
         
     except ValueError as e:
