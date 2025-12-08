@@ -76,7 +76,7 @@ const sendOTPEmail = async (email, otp) => {
                       </table>
                       
                       <p style="color: #666666; line-height: 1.6; margin: 20px 0; font-size: 16px;">
-                        This OTP will expire in <strong>10 minutes</strong>. Please do not share this code with anyone.
+                        This OTP will expire in <strong>1 minutes</strong>. Please do not share this code with anyone.
                       </p>
                       
                       <p style="color: #666666; line-height: 1.6; margin: 20px 0 0 0; font-size: 14px;">
