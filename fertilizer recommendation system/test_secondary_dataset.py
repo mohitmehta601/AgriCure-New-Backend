@@ -26,14 +26,13 @@ def test_dataset_integration():
         'pH': 5.5,
         'Electrical_Conductivity': 400,
         'Soil_Moisture': 18,
-        'Soil_Temperature': 28,
-        'Soil_Type': 'Alluvial'
+        'Soil_Temperature': 28
     }
     
     ph_range = model.categorize_ph(test1['pH'])
     ec_range = model.categorize_ec(test1['Electrical_Conductivity'])
     
-    print(f"Input: Soil={test1['Soil_Type']}, Crop={test1['Crop_Type']}")
+    print(f"Input: Crop={test1['Crop_Type']}")
     print(f"       pH={test1['pH']} ({ph_range}), EC={test1['Electrical_Conductivity']} µS/cm ({ec_range})")
     
     result1 = model.predict(test1)
@@ -45,8 +44,7 @@ def test_dataset_integration():
         ec=test1['Electrical_Conductivity'],
         moisture=test1['Soil_Moisture'],
         temperature=test1['Soil_Temperature'],
-        crop_type=test1['Crop_Type'],
-        soil_type=test1['Soil_Type']
+        crop_type=test1['Crop_Type']
     )
     
     print(f"\n✅ Recommendation: {result1}")
@@ -63,14 +61,13 @@ def test_dataset_integration():
         'pH': 7.0,
         'Electrical_Conductivity': 1000,
         'Soil_Moisture': 20,
-        'Soil_Temperature': 22,
-        'Soil_Type': 'Black'
+        'Soil_Temperature': 22
     }
     
     ph_range2 = model.categorize_ph(test2['pH'])
     ec_range2 = model.categorize_ec(test2['Electrical_Conductivity'])
     
-    print(f"Input: Soil={test2['Soil_Type']}, Crop={test2['Crop_Type']}")
+    print(f"Input: Crop={test2['Crop_Type']}")
     print(f"       pH={test2['pH']} ({ph_range2}), EC={test2['Electrical_Conductivity']} µS/cm ({ec_range2})")
     
     result2 = model.predict(test2)
@@ -82,15 +79,14 @@ def test_dataset_integration():
         ec=test2['Electrical_Conductivity'],
         moisture=test2['Soil_Moisture'],
         temperature=test2['Soil_Temperature'],
-        crop_type=test2['Crop_Type'],
-        soil_type=test2['Soil_Type']
+        crop_type=test2['Crop_Type']
     )
     
     print(f"\n✅ Recommendation: {result2}")
     print(f"🔍 Deficiencies: {', '.join(deficiencies2) if deficiencies2 else 'None'}")
     
-    # Test Case 3: Red soil, Alkaline pH, High EC, Cotton
-    print("\n\n📋 TEST CASE 3: Red + Alkaline pH + High EC + Cotton")
+    # Test Case 3: Alkaline pH, High EC, Cotton
+    print("\n\n📋 TEST CASE 3: Alkaline pH + High EC + Cotton")
     print("-" * 80)
     test3 = {
         'Nitrogen': 180,
@@ -100,14 +96,13 @@ def test_dataset_integration():
         'pH': 8.0,
         'Electrical_Conductivity': 2500,
         'Soil_Moisture': 15,
-        'Soil_Temperature': 30,
-        'Soil_Type': 'Red'
+        'Soil_Temperature': 30
     }
     
     ph_range3 = model.categorize_ph(test3['pH'])
     ec_range3 = model.categorize_ec(test3['Electrical_Conductivity'])
     
-    print(f"Input: Soil={test3['Soil_Type']}, Crop={test3['Crop_Type']}")
+    print(f"Input: Crop={test3['Crop_Type']}")
     print(f"       pH={test3['pH']} ({ph_range3}), EC={test3['Electrical_Conductivity']} µS/cm ({ec_range3})")
     
     result3 = model.predict(test3)
@@ -119,8 +114,7 @@ def test_dataset_integration():
         ec=test3['Electrical_Conductivity'],
         moisture=test3['Soil_Moisture'],
         temperature=test3['Soil_Temperature'],
-        crop_type=test3['Crop_Type'],
-        soil_type=test3['Soil_Type']
+        crop_type=test3['Crop_Type']
     )
     
     print(f"\n✅ Recommendation: {result3}")
@@ -137,14 +131,13 @@ def test_dataset_integration():
         'pH': 6.5,
         'Electrical_Conductivity': 600,
         'Soil_Moisture': 22,
-        'Soil_Temperature': 25,
-        'Soil_Type': 'Alluvial'
+        'Soil_Temperature': 25
     }
     
     ph_range4 = model.categorize_ph(test4['pH'])
     ec_range4 = model.categorize_ec(test4['Electrical_Conductivity'])
     
-    print(f"Input: Soil={test4['Soil_Type']}, Crop={test4['Crop_Type']}")
+    print(f"Input: Crop={test4['Crop_Type']}")
     print(f"       pH={test4['pH']} ({ph_range4}), EC={test4['Electrical_Conductivity']} µS/cm ({ec_range4})")
     print(f"Note: Crop not in dataset - using rule-based fallback")
     
@@ -157,8 +150,7 @@ def test_dataset_integration():
         ec=test4['Electrical_Conductivity'],
         moisture=test4['Soil_Moisture'],
         temperature=test4['Soil_Temperature'],
-        crop_type=test4['Crop_Type'],
-        soil_type=test4['Soil_Type']
+        crop_type=test4['Crop_Type']
     )
     
     print(f"\n✅ Recommendation: {result4}")
@@ -169,7 +161,6 @@ def test_dataset_integration():
     print("=" * 80)
     print(f"\n📊 Dataset Summary:")
     print(f"   Total records in dataset: {len(model.dataset)}")
-    print(f"   Supported soil types: {', '.join(model.soil_types)}")
     print(f"   Supported crops in requirements: {len(model.crop_micronutrients)}")
     print("=" * 80)
 

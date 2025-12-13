@@ -231,7 +231,7 @@ def example_6_batch_predictions():
         {
             'name': 'Field A - Wheat',
             'params': {
-                'size': 2.5, 'crop': 'Wheat', 'soil': 'Loamy',
+                'size': 2.5, 'crop': 'Wheat',
                 'sowing_date': '2025-11-01', 'nitrogen': 180.0,
                 'phosphorus': 25.0, 'potassium': 150.0, 'soil_ph': 6.8,
                 'soil_moisture': 55.0, 'electrical_conductivity': 450.0,
@@ -241,7 +241,7 @@ def example_6_batch_predictions():
         {
             'name': 'Field B - Rice',
             'params': {
-                'size': 1.8, 'crop': 'Rice', 'soil': 'Clay',
+                'size': 1.8, 'crop': 'Rice',
                 'sowing_date': '2025-06-15', 'nitrogen': 140.0,
                 'phosphorus': 18.0, 'potassium': 190.0, 'soil_ph': 7.0,
                 'soil_moisture': 60.0, 'electrical_conductivity': 520.0,
@@ -251,7 +251,7 @@ def example_6_batch_predictions():
         {
             'name': 'Field C - Cotton',
             'params': {
-                'size': 3.2, 'crop': 'Cotton', 'soil': 'Sandy',
+                'size': 3.2, 'crop': 'Cotton',
                 'sowing_date': '2025-04-20', 'nitrogen': 110.0,
                 'phosphorus': 12.0, 'potassium': 130.0, 'soil_ph': 6.5,
                 'soil_moisture': 42.0, 'electrical_conductivity': 380.0,

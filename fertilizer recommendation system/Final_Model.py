@@ -55,7 +55,7 @@ class PrimaryFertilizerModel:
         self.label_encoders_features = {}
         self.label_encoders_targets = {}
         self.trained_models = {}
-        self.categorical_features = ['Soil_Type', 'Crop_Type']
+        self.categorical_features = ['Crop_Type']
         self.target_cols = ['N_Status', 'P_Status', 'K_Status', 'Primary_Fertilizer', 'pH_Amendment']
         
         print("⚙️ Initializing Primary Fertilizer Model...")
@@ -73,7 +73,7 @@ class PrimaryFertilizerModel:
             
             # Prepare features and targets
             feature_cols = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
-                          'Soil_Type', 'Crop_Type', 'pH', 'Electrical_Conductivity', 
+                          'Crop_Type', 'pH', 'Electrical_Conductivity', 
                           'Soil_Moisture', 'Soil_Temperture']
             
             X = df[feature_cols].copy()
@@ -122,7 +122,7 @@ class PrimaryFertilizerModel:
             print(f"❌ Error during model training: {e}")
             self.is_trained = False
     
-    def predict(self, nitrogen, phosphorus, potassium, soil_type, crop_type, 
+    def predict(self, nitrogen, phosphorus, potassium, crop_type, 
                 ph, electrical_conductivity, soil_moisture, soil_temperature):
         """
         Predict fertilizer recommendations
@@ -132,7 +132,6 @@ class PrimaryFertilizerModel:
         nitrogen : float (mg/kg)
         phosphorus : float (mg/kg)
         potassium : float (mg/kg)
-        soil_type : str
         crop_type : str
         ph : float
         electrical_conductivity : float
@@ -152,7 +151,6 @@ class PrimaryFertilizerModel:
             'Nitrogen(mg/kg)': [nitrogen],
             'Phosphorus(mg/kg)': [phosphorus],
             'Potassium(mg/kg)': [potassium],
-            'Soil_Type': [soil_type],
             'Crop_Type': [crop_type],
             'pH': [ph],
             'Electrical_Conductivity': [electrical_conductivity],
@@ -210,7 +208,6 @@ class FinalFertilizerRecommendationSystem:
     def predict(self, 
                 size: float,
                 crop: str,
-                soil: str,
                 sowing_date: str,
                 nitrogen: float,
                 phosphorus: float,
@@ -229,8 +226,6 @@ class FinalFertilizerRecommendationSystem:
             Field size in hectares
         crop : str
             Crop type (e.g., "Wheat", "Rice", "Maize")
-        soil : str
-            Soil type (e.g., "Loamy", "Clay", "Sandy")
         sowing_date : str
             Sowing date in format YYYY-MM-DD
         nitrogen : float
@@ -266,7 +261,6 @@ class FinalFertilizerRecommendationSystem:
                 nitrogen=nitrogen,
                 phosphorus=phosphorus,
                 potassium=potassium,
-                soil_type=soil,
                 crop_type=crop,
                 ph=soil_ph,
                 electrical_conductivity=electrical_conductivity,
@@ -317,7 +311,6 @@ class FinalFertilizerRecommendationSystem:
             ec=electrical_conductivity,
             soil_temperature=soil_temperature,
             soil_moisture=soil_moisture,
-            soil_type=soil,
             crop_type=crop,
             sowing_date=sowing_date,
             field_size=size
@@ -405,7 +398,6 @@ def get_user_input():
         print("--- Field & Crop Information ---")
         size = float(input("Field Size (hectares): "))
         crop = input("Crop Type (e.g., Wheat, Rice, Maize): ").strip()
-        soil = input("Soil Type (e.g., Loamy, Clay, Sandy, Alluvial): ").strip()
         sowing_date = input("Sowing Date (YYYY-MM-DD): ").strip()
         
         # Soil Parameters
@@ -426,7 +418,6 @@ def get_user_input():
         return {
             'size': size,
             'crop': crop,
-            'soil': soil,
             'sowing_date': sowing_date,
             'nitrogen': nitrogen,
             'phosphorus': phosphorus,
@@ -474,7 +465,6 @@ def main():
     example_params = {
         'size': 2.5,
         'crop': 'Wheat',
-        'soil': 'Loamy',
         'sowing_date': '2025-11-15',
         'nitrogen': 180.0,
         'phosphorus': 25.0,

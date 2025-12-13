@@ -14,7 +14,6 @@ const recommendationSchema = new mongoose.Schema({
   fieldSize: Number,
   fieldSizeUnit: String,
   cropType: String,
-  soilType: String,
   soilPh: Number,
   nitrogen: Number,
   phosphorus: Number,

@@ -382,7 +382,6 @@ class InputData:
     ec: float  # mmhos/cm2
     soil_temperature: float  # °C
     soil_moisture: float  # %
-    soil_type: str
     crop_type: str
     sowing_date: str  # ISO format YYYY-MM-DD
     field_size: float  # in hectares
@@ -952,7 +951,6 @@ Based on the following information, provide detailed recommendations:
 **Soil and Environmental Data:**
 - Soil Temperature: {input_data.soil_temperature}°C
 - Soil Moisture: {input_data.soil_moisture}%
-- Soil Type: {input_data.soil_type}
 - Soil pH: {input_data.ph}
 - EC (Electrical Conductivity): {input_data.ec} mmhos/cm²
 
@@ -993,12 +991,12 @@ Provide recommendations in the following JSON format:
     }},
     "organic_alternatives": [
         {{
-            "name": "Select ONE organic fertilizer from this list that best addresses the SPECIFIC nutrient deficiencies (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) for {input_data.crop_type} in {input_data.soil_type} soil: {', '.join(ORGANIC_ALTERNATIVES)}",
+            "name": "Select ONE organic fertilizer from this list that best addresses the SPECIFIC nutrient deficiencies (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) for {input_data.crop_type}: {', '.join(ORGANIC_ALTERNATIVES)}",
             "quantity_kg": "Calculate realistic quantity for {input_data.field_size} hectares based on the selected organic fertilizer's typical application rate and current soil nutrient levels (N:{input_data.nitrogen} mg/kg, P:{input_data.phosphorus} mg/kg, K:{input_data.potassium} mg/kg)",
             "npk_content": "Provide the NPK ratio (e.g., 1.5-1.0-1.5)",
             "primary_nutrients": "List primary nutrients provided (e.g., ['Nitrogen', 'Phosphorus', 'Potassium'])",
             "benefits": "Explain specific benefits: why use this fertilizer, what problems it solves, and its unique advantages for {input_data.crop_type}",
-            "reason": "Explain specifically how this addresses the nutrient status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) and why it's suitable for {input_data.crop_type} in {input_data.soil_type} soil",
+            "reason": "Explain specifically how this addresses the nutrient status (N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}) and why it's suitable for {input_data.crop_type}",
             "timing": "Specify timing based on sowing date ({input_data.sowing_date}) and crop growth stages for {input_data.crop_type}"
         }},
         {{
@@ -1016,7 +1014,7 @@ Provide recommendations in the following JSON format:
             "npk_content": "Provide the NPK ratio",
             "primary_nutrients": "List primary nutrients provided",
             "benefits": "Explain specific benefits focusing on long-term soil health, conditioning, and overall crop productivity",
-            "reason": "Focus on long-term soil conditioning benefits for {input_data.soil_type} soil",
+            "reason": "Focus on long-term soil conditioning benefits",
             "timing": "Suggest optimal application timing for maximum soil conditioning benefits"
         }}
     ],
@@ -1033,7 +1031,6 @@ Provide recommendations in the following JSON format:
 2. Each organic alternative must be DIFFERENT and specifically chosen based on:
    - Current NPK status: N={ml_prediction.n_status}, P={ml_prediction.p_status}, K={ml_prediction.k_status}
    - Soil nutrient levels: N={input_data.nitrogen} mg/kg, P={input_data.phosphorus} mg/kg, K={input_data.potassium} mg/kg
-   - Soil type: {input_data.soil_type}
    - Crop type: {input_data.crop_type}
    - Soil conditions: pH={input_data.ph}, EC={input_data.ec}, Temp={input_data.soil_temperature}°C, Moisture={input_data.soil_moisture}%
    - Primary fertilizer being used: {ml_prediction.primary_fertilizer}
@@ -1311,7 +1308,6 @@ def generate_enhanced_recommendation(
         "_metadata": {
             "generated_at": datetime.now().isoformat(),
             "crop_type": input_data.crop_type,
-            "soil_type": input_data.soil_type,
             "sowing_date": input_data.sowing_date,
             "field_size_hectares": input_data.field_size,
             "model_used": "Gemini-1.5-Flash + ML Stacking Model",
@@ -1369,18 +1365,6 @@ def generate_fallback_recommendation(
         ("high", "n"): ["Compost", "Mulch", "Azolla"],
         # For balanced/optimal conditions
         ("optimal", "general"): ["Vermicompost", "Neem cake", "Compost"],
-        # For clay soils
-        ("clay", "soil"): ["Compost", "Mulch", "Vermicompost"],
-        # For sandy soils
-        ("sandy", "soil"): ["Farmyard manure (FYM)", "Vermicompost", "Green manure"],
-        # For loamy soils
-        ("loamy", "soil"): ["Neem cake", "Compost", "Poultry manure"],
-        # For alluvial soils
-        ("alluvial", "soil"): ["Vermicompost", "Mustard cake", "Bone meal"],
-        # For red soils
-        ("red", "soil"): ["Green manure", "Compost", "Bone meal"],
-        # For black soils
-        ("black", "soil"): ["Farmyard manure (FYM)", "Compost", "Neem cake"],
     }
     
     # Determine which organic alternatives to use based on nutrient status
@@ -1399,16 +1383,6 @@ def generate_fallback_recommendation(
     # Check K status
     if ml_prediction.k_status.lower() == "low":
         selected_organics.extend(organic_alternatives_map.get(("low", "k"), [])[:1])
-    
-    # Prioritize soil type specific organics - add all 3 from soil type list
-    soil_key = (input_data.soil_type.lower(), "soil")
-    if soil_key in organic_alternatives_map:
-        soil_organics = organic_alternatives_map[soil_key]
-        for org in soil_organics:
-            if len(selected_organics) >= 3:
-                break
-            if org not in selected_organics:
-                selected_organics.append(org)
     
     # If we still don't have enough, add from optimal list
     optimal_organics = organic_alternatives_map.get(("optimal", "general"), ["Vermicompost", "Neem cake", "Compost"])
@@ -1447,7 +1421,7 @@ def generate_fallback_recommendation(
             reasons.append(f"Supplements potassium levels (current: {input_data.potassium} mg/kg)")
         
         if not reasons:
-            reasons.append(f"Improves soil structure for {input_data.soil_type} soil growing {input_data.crop_type}")
+            reasons.append(f"Improves soil structure for {input_data.crop_type}")
             if input_data.soil_moisture < 40:
                 reasons.append("Helps retain moisture")
             elif input_data.ec > 2.0:
@@ -1512,7 +1486,7 @@ def generate_fallback_recommendation(
             "npk": "Check fertilizer label",
             "reason": f"Recommended based on {ml_prediction.n_status} nitrogen status (N: {input_data.nitrogen} mg/kg, P: {input_data.phosphorus} mg/kg, K: {input_data.potassium} mg/kg)",
             "nutrients_provided": get_fertilizer_nutrients(ml_prediction.primary_fertilizer),
-            "benefits": f"Addresses nutrient deficiency in {input_data.crop_type}, promotes healthy growth, and improves yield potential based on {input_data.soil_type} soil conditions"
+            "benefits": f"Addresses nutrient deficiency in {input_data.crop_type}, promotes healthy growth, and improves yield potential based on soil analysis"
         },
         "secondary_fertilizer": {
             "name": secondary_fertilizer,
@@ -1570,9 +1544,8 @@ def generate_fallback_recommendation(
             "model_used": "ML Stacking Model (Intelligent Fallback - Crop & Soil Specific)",
             "nutrient_units": "mg/kg",
             "crop_type": input_data.crop_type,
-            "soil_type": input_data.soil_type,
             "npk_status": f"N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}",
-            "note": "Organic alternatives selected based on NPK status, soil type, and crop requirements"
+            "note": "Organic alternatives selected based on NPK status and crop requirements"
         }
     }
     
@@ -1595,7 +1568,6 @@ if __name__ == "__main__":
         ec=0.45,
         soil_temperature=28.5,  # °C
         soil_moisture=55.0,  # %
-        soil_type="Loamy",
         crop_type="Wheat",
         sowing_date="2025-11-15",
         field_size=2.27  # hectares (approx 5.6 acres)

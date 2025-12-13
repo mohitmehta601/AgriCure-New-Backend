@@ -7,8 +7,7 @@ const mongoose = require('mongoose');
  * - Field Size (size) 
  * - Unit (unit)
  * - Crop Type (cropType)
- * - Soil Type - Auto-detected (soilType)
- * - Location & Soil Detection (location, latitude, longitude, soilData)
+ * - Location (location, latitude, longitude)
  * - Sowing Date (sowingDate)
  */
 const farmSchema = new mongoose.Schema({
@@ -50,12 +49,6 @@ const farmSchema = new mongoose.Schema({
     trim: true,
     index: true
   },
-  soilType: {
-    type: String,
-    required: [true, 'Soil type is required (auto-detected via location)'],
-    trim: true,
-    index: true
-  },
   location: {
     type: String,
     trim: true,
@@ -70,11 +63,6 @@ const farmSchema = new mongoose.Schema({
     type: Number,
     min: [-180, 'Longitude must be between -180 and 180'],
     max: [180, 'Longitude must be between -180 and 180']
-  },
-  soilData: {
-    type: mongoose.Schema.Types.Mixed,
-    // Stores detailed soil properties as JSON from the soil detection API
-    // Example: { ph: 6.5, nitrogen: 45, phosphorus: 30, potassium: 35, ... }
   },
   sowingDate: {
     type: Date,

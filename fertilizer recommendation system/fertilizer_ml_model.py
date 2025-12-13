@@ -24,13 +24,13 @@ print(f"\nFirst few rows:")
 print(df.head())
 
 # Separate features and targets
-# For Primary_Fertilizer: use only 5 features
+# For Primary_Fertilizer: use only 4 features (removed Soil_Type)
 feature_cols_primary = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
-                        'Soil_Type', 'Crop_Type']
+                        'Crop_Type']
 
-# For other targets (N_Status, P_Status, K_Status, pH_Amendment): use all 9 features
+# For other targets (N_Status, P_Status, K_Status, pH_Amendment): use all 8 features (removed Soil_Type)
 feature_cols_all = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
-                    'Soil_Type', 'Crop_Type', 'pH', 'Electrical_Conductivity', 
+                    'Crop_Type', 'pH', 'Electrical_Conductivity', 
                     'Soil_Moisture', 'Soil_Temperture']
 
 target_cols = ['N_Status', 'P_Status', 'K_Status', 'Primary_Fertilizer', 'pH_Amendment']
@@ -46,12 +46,12 @@ target_feature_mapping = {
 
 y = df[target_cols].copy()
 
-print(f"\nPrimary_Fertilizer features (5): {feature_cols_primary}")
-print(f"Other targets features (9): {feature_cols_all}")
+print(f"\nPrimary_Fertilizer features (4): {feature_cols_primary}")
+print(f"Other targets features (8): {feature_cols_all}")
 print(f"Targets: {target_cols}")
 
-# Identify categorical columns
-categorical_features = ['Soil_Type', 'Crop_Type']
+# Identify categorical columns (removed Soil_Type)
+categorical_features = ['Crop_Type']
 
 # Prepare encoded versions for all features
 X_all = df[feature_cols_all].copy()
@@ -336,7 +336,7 @@ print("TRAINING COMPLETED SUCCESSFULLY!")
 print("="*80)
 
 # ===== PREDICTION FUNCTION =====
-def predict_fertilizer(nitrogen, phosphorus, potassium, soil_type, crop_type, 
+def predict_fertilizer(nitrogen, phosphorus, potassium, crop_type, 
                        ph=None, electrical_conductivity=None, soil_moisture=None, soil_temperature=None):
     """
     Predict fertilizer recommendations for given input parameters
@@ -345,7 +345,6 @@ def predict_fertilizer(nitrogen, phosphorus, potassium, soil_type, crop_type,
         nitrogen: Nitrogen level in mg/kg
         phosphorus: Phosphorus level in mg/kg
         potassium: Potassium level in mg/kg
-        soil_type: Type of soil (e.g., 'Alluvial', 'Black', 'Red', etc.)
         crop_type: Type of crop (e.g., 'Wheat', 'Rice', 'Maize', etc.)
         ph: pH level (optional, required for N_Status, P_Status, K_Status, pH_Amendment)
         electrical_conductivity: EC value (optional, required for other targets)
@@ -355,23 +354,21 @@ def predict_fertilizer(nitrogen, phosphorus, potassium, soil_type, crop_type,
     Returns:
         Dictionary with predictions from all models and ensemble for each target
     """
-    # Create input dataframe for Primary_Fertilizer (5 features)
+    # Create input dataframe for Primary_Fertilizer (4 features, removed Soil_Type)
     input_data_primary = pd.DataFrame({
         'Nitrogen(mg/kg)': [nitrogen],
         'Phosphorus(mg/kg)': [phosphorus],
         'Potassium(mg/kg)': [potassium],
-        'Soil_Type': [soil_type],
         'Crop_Type': [crop_type]
     })
     
-    # Create input dataframe for other targets (9 features) if all params provided
+    # Create input dataframe for other targets (8 features, removed Soil_Type) if all params provided
     input_data_all = None
     if all(v is not None for v in [ph, electrical_conductivity, soil_moisture, soil_temperature]):
         input_data_all = pd.DataFrame({
             'Nitrogen(mg/kg)': [nitrogen],
             'Phosphorus(mg/kg)': [phosphorus],
             'Potassium(mg/kg)': [potassium],
-            'Soil_Type': [soil_type],
             'Crop_Type': [crop_type],
             'pH': [ph],
             'Electrical_Conductivity': [electrical_conductivity],
@@ -437,13 +434,12 @@ print("\n" + "="*80)
 print("EXAMPLE PREDICTION")
 print("="*80)
 
-# Example 1: Primary_Fertilizer only (5 features)
-print("\n--- Example 1: Primary Fertilizer Only (5 features) ---")
+# Example 1: Primary_Fertilizer only (4 features, removed Soil_Type)
+print("\n--- Example 1: Primary Fertilizer Only (4 features) ---")
 example_input_primary = {
     'nitrogen': 126.39,
     'phosphorus': 7.18,
     'potassium': 181.53,
-    'soil_type': 'Alluvial',
     'crop_type': 'Barley'
 }
 
@@ -459,13 +455,12 @@ for target, preds in predictions_primary.items():
     for model, pred in preds.items():
         print(f"  {model.upper():10s}: {pred}")
 
-# Example 2: All targets (9 features)
-print("\n\n--- Example 2: All Predictions (9 features) ---")
+# Example 2: All targets (8 features, removed Soil_Type)
+print("\n\n--- Example 2: All Predictions (8 features) ---")
 example_input_all = {
     'nitrogen': 126.39,
     'phosphorus': 7.18,
     'potassium': 181.53,
-    'soil_type': 'Alluvial',
     'crop_type': 'Barley',
     'ph': 7.11,
     'electrical_conductivity': 743.8,
