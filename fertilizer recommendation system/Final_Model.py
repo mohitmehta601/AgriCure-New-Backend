@@ -3,7 +3,7 @@ FINAL INTEGRATED FERTILIZER RECOMMENDATION SYSTEM
 ==================================================
 
 This module integrates three models:
-1. fertilizer_ml_model.py - Predicts N_Status, P_Status, K_Status, Primary_Fertilizer, pH_Amendment
+1. primary_fertilizer_pH_model.py - Rule-based N_Status, P_Status, K_Status, Primary_Fertilizer, pH_Amendment
 2. secondary_fertilizer_model.py - Predicts Secondary_Fertilizer (micronutrients)
 3. LLM_model.py - Generates comprehensive recommendation report
 
@@ -21,12 +21,8 @@ from typing import Dict, Any, Optional
 import warnings
 warnings.filterwarnings('ignore')
 
-# Import ML models
-from sklearn.preprocessing import LabelEncoder
-from sklearn.ensemble import RandomForestClassifier
-import xgboost as xgb
-from catboost import CatBoostClassifier
-import lightgbm as lgb
+# Import primary fertilizer & pH model (rule-based)
+from primary_fertilizer_pH_model import PrimaryFertilizerAndpHModel
 
 # Import secondary fertilizer model
 from secondary_fertilizer_model import SecondaryFertilizerModel
@@ -41,141 +37,10 @@ from LLM_model import (
 
 
 # ==================================================================================
-# PRIMARY ML MODEL - Fertilizer Prediction Model
+# PRIMARY MODEL - Rule-Based Fertilizer & pH Recommendation
 # ==================================================================================
-class PrimaryFertilizerModel:
-    """
-    Wrapper class for the trained primary fertilizer ML model
-    Predicts: N_Status, P_Status, K_Status, Primary_Fertilizer, pH_Amendment
-    """
-    
-    def __init__(self):
-        """Initialize the model by loading pre-trained models"""
-        self.is_trained = False
-        self.label_encoders_features = {}
-        self.label_encoders_targets = {}
-        self.trained_models = {}
-        self.categorical_features = ['Crop_Type']
-        self.target_cols = ['N_Status', 'P_Status', 'K_Status', 'Primary_Fertilizer', 'pH_Amendment']
-        
-        print("⚙️ Initializing Primary Fertilizer Model...")
-        self._load_or_train_model()
-    
-    def _load_or_train_model(self):
-        """Load pre-trained model or train if not available"""
-        try:
-            # Try to load the dataset and train
-            # Get the directory where this script is located
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            dataset_path = os.path.join(script_dir, 'Primary and pH Dataset.csv')
-            df = pd.read_csv(dataset_path)
-            print("✅ Dataset loaded successfully")
-            
-            # Prepare features and targets
-            feature_cols = ['Nitrogen(mg/kg)', 'Phosphorus(mg/kg)', 'Potassium(mg/kg)', 
-                          'Crop_Type', 'pH', 'Electrical_Conductivity', 
-                          'Soil_Moisture', 'Soil_Temperture']
-            
-            X = df[feature_cols].copy()
-            y = df[self.target_cols].copy()
-            
-            # Encode categorical features
-            X_encoded = X.copy()
-            for col in self.categorical_features:
-                le = LabelEncoder()
-                X_encoded[col] = le.fit_transform(X[col])
-                self.label_encoders_features[col] = le
-            
-            # Encode target variables
-            y_encoded = y.copy()
-            for col in self.target_cols:
-                le = LabelEncoder()
-                y_encoded[col] = le.fit_transform(y[col])
-                self.label_encoders_targets[col] = le
-            
-            print("🎯 Training models for each target variable...")
-            
-            # Train simple models for each target (using Random Forest for speed)
-            for target in self.target_cols:
-                print(f"  - Training {target}...")
-                y_target = y_encoded[target].values
-                
-                # Train a single Random Forest model
-                rf_model = RandomForestClassifier(
-                    n_estimators=100,
-                    max_depth=20,
-                    random_state=42,
-                    n_jobs=-1
-                )
-                rf_model.fit(X_encoded, y_target)
-                
-                self.trained_models[target] = rf_model
-            
-            self.is_trained = True
-            print("✅ Primary Fertilizer Model trained successfully")
-            
-        except FileNotFoundError:
-            print("❌ Error: 'Primary and pH Dataset.csv' not found")
-            print("⚠️ Model cannot be trained without the dataset")
-            self.is_trained = False
-        except Exception as e:
-            print(f"❌ Error during model training: {e}")
-            self.is_trained = False
-    
-    def predict(self, nitrogen, phosphorus, potassium, crop_type, 
-                ph, electrical_conductivity, soil_moisture, soil_temperature):
-        """
-        Predict fertilizer recommendations
-        
-        Parameters:
-        -----------
-        nitrogen : float (mg/kg)
-        phosphorus : float (mg/kg)
-        potassium : float (mg/kg)
-        crop_type : str
-        ph : float
-        electrical_conductivity : float
-        soil_moisture : float (%)
-        soil_temperature : float (°C)
-        
-        Returns:
-        --------
-        dict: Predictions for all targets
-        """
-        
-        if not self.is_trained:
-            raise RuntimeError("Model is not trained. Cannot make predictions.")
-        
-        # Create input dataframe
-        input_data = pd.DataFrame({
-            'Nitrogen(mg/kg)': [nitrogen],
-            'Phosphorus(mg/kg)': [phosphorus],
-            'Potassium(mg/kg)': [potassium],
-            'Crop_Type': [crop_type],
-            'pH': [ph],
-            'Electrical_Conductivity': [electrical_conductivity],
-            'Soil_Moisture': [soil_moisture],
-            'Soil_Temperture': [soil_temperature]
-        })
-        
-        # Encode categorical features
-        input_encoded = input_data.copy()
-        for col in self.categorical_features:
-            try:
-                input_encoded[col] = self.label_encoders_features[col].transform(input_data[col])
-            except ValueError:
-                # Handle unseen categories
-                input_encoded[col] = 0
-        
-        # Make predictions
-        results = {}
-        for target in self.target_cols:
-            model = self.trained_models[target]
-            pred_encoded = model.predict(input_encoded)[0]
-            pred_label = self.label_encoders_targets[target].inverse_transform([pred_encoded])[0]
-            results[target] = pred_label
-        
-        return results
+# Note: We now use the rule-based PrimaryFertilizerAndpHModel instead of ML
+# This provides 100% deterministic predictions based on expert agricultural rules
 
 
 # ==================================================================================
@@ -193,8 +58,8 @@ class FinalFertilizerRecommendationSystem:
         print("INITIALIZING FINAL FERTILIZER RECOMMENDATION SYSTEM")
         print("="*80 + "\n")
         
-        # Initialize primary fertilizer model
-        self.primary_model = PrimaryFertilizerModel()
+        # Initialize primary fertilizer model (rule-based)
+        self.primary_model = PrimaryFertilizerAndpHModel()
         
         # Initialize secondary fertilizer model
         print("\n⚙️ Initializing Secondary Fertilizer Model...")

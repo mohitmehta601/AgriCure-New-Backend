@@ -1,7 +1,11 @@
 """
 Simple script to run the FastAPI server
 """
+import os
 import uvicorn
+
+# Set NumExpr to use all available CPU cores
+os.environ['NUMEXPR_MAX_THREADS'] = '16'
 
 if __name__ == "__main__":
     print("\n" + "=" * 70)

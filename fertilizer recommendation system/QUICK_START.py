@@ -32,7 +32,6 @@ system = FinalFertilizerRecommendationSystem()
 result = system.predict(
     size=2.5,                       # Field size in hectares
     crop='Wheat',                   # Your crop
-    soil='Loamy',                   # Your soil type
     sowing_date='2025-11-15',       # When you'll sow (YYYY-MM-DD)
     nitrogen=180.0,                 # Soil test: N in mg/kg
     phosphorus=25.0,                # Soil test: P in mg/kg
@@ -65,7 +64,6 @@ print("K Status:", result['ml_predictions']['K_Status'])
 # Then enter your values:
 # Field Size (hectares): 2.5
 # Crop Type: Wheat
-# Soil Type: Loamy
 # Sowing Date: 2025-11-15
 # Nitrogen (mg/kg): 180
 # Phosphorus (mg/kg): 25
@@ -87,7 +85,7 @@ from Final_Model import FinalFertilizerRecommendationSystem
 system = FinalFertilizerRecommendationSystem()
 
 recommendation = system.predict(
-    size=2.5, crop='Wheat', soil='Loamy', sowing_date='2025-11-15',
+    size=2.5, crop='Wheat', sowing_date='2025-11-15',
     nitrogen=180.0, phosphorus=25.0, potassium=150.0, soil_ph=6.8,
     soil_moisture=55.0, electrical_conductivity=450.0, 
     soil_temperature=28.5, use_llm=False
@@ -129,7 +127,6 @@ for field in fields:
     rec = system.predict(
         size=field['size'],
         crop=field['crop'],
-        soil='Loamy',
         sowing_date='2025-11-15',
         nitrogen=field['nitrogen'],
         phosphorus=field['phosphorus'],
@@ -263,7 +260,6 @@ if __name__ == "__main__":
     result = system.predict(
         size=2.5,
         crop='Wheat',
-        soil='Loamy',
         sowing_date='2025-11-15',
         nitrogen=180.0,
         phosphorus=25.0,

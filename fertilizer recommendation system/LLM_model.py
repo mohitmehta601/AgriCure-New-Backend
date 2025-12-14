@@ -872,49 +872,54 @@ def calculate_fertilizer_quantity(
     # ----------------------------------------
     # 🧪 Secondary & Micronutrient Sources
     # ----------------------------------------
-    'zinc_sulphate': 10,
-    'manganese_sulphate': 8,
-    'ferrous_sulphate': 8,
+    'zinc_sulphate': 25,  # 25 kg/ha per standard recommendation
+    'manganese_sulphate': 12.5,  # 12.5 kg/ha per standard recommendation
+    'ferrous_sulphate': 25,  # 25 kg/ha per standard recommendation
     'magnesium_sulphate': 10,
-    'borax_zinc_sulphate_mixture': 10,
-    'ferrous_sulphate_manganese_sulphate_mixture': 10,
-    'zinc_sulphate_manganese_sulphate_mixture': 10,
+    'borax': 10,  # 10 kg/ha per standard recommendation
+    'copper_sulphate': 5,  # 5 kg/ha per standard recommendation
+    'ammonium_molybdate': 0.6,  # 0.6 kg/ha per standard recommendation
+    'calcium_chloride': 25,  # 25 kg/ha per standard recommendation
+    'nickel_sulphate': 1.25,  # 1.25 kg/ha per standard recommendation
+    'borax_zinc_sulphate_mixture': 17.5,  # Average of borax (10) + zinc (25) / 2
+    'ferrous_sulphate_manganese_sulphate_mixture': 18.75,  # Average of ferrous (25) + manganese (12.5) / 2
+    'zinc_sulphate_manganese_sulphate_mixture': 18.75,  # Average of zinc (25) + manganese (12.5) / 2
     'gypsum_borax_mixture': 15,
-    'ammonium_molybdate_zinc_sulphate_mixture': 8,
+    'ammonium_molybdate_zinc_sulphate_mixture': 12.8,  # Average of ammonium molybdate (0.6) + zinc (25) / 2
 
     # ----------------------------------------
     # 🌿 Organic Sources (bulk material)
     # ----------------------------------------
-    'vermicompost': 2500,
-    'compost': 5000,
-    'farmyard_manure_fym': 5000,
-    'neem_cake': 500,
-    'poultry_manure': 2000,
-    'mustard_cake': 500,
-    'bone_meal': 300,
-    'green_manure': 1000,
-    'banana_wastes': 2000,
-    'mulch': 3000,
+    'vermicompost': 2500,  # 2.5 tons/ha per standard recommendation
+    'compost': 10000,  # 10 tons/ha per standard recommendation
+    'farmyard_manure_fym': 12500,  # 12.5 tons/ha per standard recommendation
+    'neem_cake': 500,  # 500 kg/ha per standard recommendation
+    'poultry_manure': 5000,  # 5 tons/ha per standard recommendation
+    'mustard_cake': 500,  # 500 kg/ha per standard recommendation
+    'bone_meal': 375,  # 375 kg/ha per standard recommendation
+    'green_manure': 17500,  # 15-20 tons/ha, using average 17.5 tons/ha
+    'banana_wastes': 3750,  # 3.75 tons/ha per standard recommendation
+    'mulch': 5000,  # 5 tons/ha per standard recommendation
 
     # ----------------------------------------
     # 🧫 Biofertilizers (liquid / microbial)
     # ----------------------------------------
-    'psb_phosphate_solubilizing_bacteria': 5,
-    'rhizobium_biofertilizer': 5,
+    'psb_phosphate_solubilizing_bacteria': 5,  # 5 kg/ha per standard recommendation
+    'rhizobium_biofertilizer': 5,  # 5 kg/ha per standard recommendation
     'rhizobium_biofertilizer_zinc_sulphate_mixture': 5,
-    'azolla': 100,
-    'trichoderma_compost': 200,
-    'seaweed_extract': 5,
-    'fish_emulsion': 5,
+    'azolla': 2500,  # 2.5 tons/ha per standard recommendation
+    'trichoderma_compost': 500,  # 500 kg/ha per standard recommendation
+    'seaweed_extract': 1.25,  # 1.25 kg/ha (or L/ha) per standard recommendation
+    'fish_emulsion': 12.5,  # 12.5 L/ha per standard recommendation
 
     # ----------------------------------------
     # 🪴 Natural & Traditional Amendments
     # ----------------------------------------
-    'cow_dung_slurry': 1000,
-    'bio_slurry': 1000,
-    'beejamrit': 10,
-    'panchagavya': 10,
-    'jeevamrut': 10
+    'cow_dung_slurry': 2500,  # 2500 L/ha per standard recommendation
+    'bio_slurry': 3750,  # 3.75 tons/ha per standard recommendation
+    'beejamrit': 50,  # 50 L/ha per standard recommendation (seed treatment)
+    'panchagavya': 37.5,  # 37.5 L/ha per standard recommendation (3% spray)
+    'jeevamrut': 500  # 500 L/ha per standard recommendation (soil drench)
   }
   
     normalized = normalize_fertilizer_name(fertilizer_name)
@@ -1148,7 +1153,10 @@ def generate_enhanced_recommendation(
     organic_costs = []
     organic_details = []
     
-    for org in gemini_data.get("organic_alternatives", []):
+    # Multipliers for three organic alternatives
+    organic_multipliers = [0.5, 0.3, 0.2]  # main, second, third
+    
+    for idx, org in enumerate(gemini_data.get("organic_alternatives", [])):
         org_name = org.get("name", "")
         # Extract quantity if provided by Gemini, else calculate
         try:
@@ -1160,6 +1168,10 @@ def generate_enhanced_recommendation(
                 "optimal",
                 "organic"
             )
+        
+        # Apply multiplier based on position (0.5 for first, 0.3 for second, 0.2 for third)
+        multiplier = organic_multipliers[idx] if idx < len(organic_multipliers) else 0.2
+        org_quantity = int(org_quantity * multiplier)
         
         org_price = get_price(org_name)
         org_cost = org_quantity * org_price
@@ -1405,8 +1417,16 @@ def generate_fallback_recommendation(
     organic_details = []
     organic_costs = []
     
-    for org_name in selected_organics:
+    # Multipliers for three organic alternatives
+    organic_multipliers = [0.5, 0.3, 0.2]  # main, second, third
+    
+    for idx, org_name in enumerate(selected_organics):
         org_quantity = calculate_fertilizer_quantity(org_name, input_data.field_size, "optimal", "organic")
+        
+        # Apply multiplier based on position (0.5 for first, 0.3 for second, 0.2 for third)
+        multiplier = organic_multipliers[idx] if idx < len(organic_multipliers) else 0.2
+        org_quantity = int(org_quantity * multiplier)
+        
         org_price = get_price(org_name)
         org_cost = org_quantity * org_price
         organic_costs.append(org_cost)

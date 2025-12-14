@@ -1,0 +1,4 @@
+Field,Crop,Primary_Fertilizer,Secondary_Fertilizer,N_Status,P_Status,K_Status
+Field 1,Wheat,Balanced NPK (Maintenance),Borax + Ferrous Sulphate + Zinc Sulphate,Optimal,Optimal,Optimal
+Field 2,Rice,Triple Super Phosphate – TSP (0–46–0),Borax + Ferrous Sulphate + Manganese Sulphate + Zinc Sulphate,Optimal,Low,Optimal
+Field 3,Maize,Balanced NPK (Maintenance),Borax + Ferrous Sulphate + Manganese Sulphate + Zinc Sulphate,Optimal,Optimal,Optimal

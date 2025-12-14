@@ -1,0 +1,168 @@
+{
+  "soil_condition_analysis": {
+    "current_status": {
+      "N_status": "Optimal",
+      "P_status": "Optimal",
+      "K_status": "Optimal",
+      "pH_status": "Optimal",
+      "moisture_status": "Optimal",
+      "nutrient_deficiencies_primary": [],
+      "nutrient_deficiencies_secondary": []
+    },
+    "soil_test_values": {
+      "nitrogen_mg_kg": 180.0,
+      "phosphorus_mg_kg": 25.0,
+      "potassium_mg_kg": 150.0,
+      "pH": 6.8,
+      "EC_mmhos_cm2": 450.0,
+      "soil_temperature": 28.5,
+      "soil_moisture": 55.0
+    },
+    "recommendations": [
+      "Maintain current pH levels",
+      "Regular soil testing recommended",
+      "Consider crop rotation"
+    ]
+  },
+  "primary_fertilizer": {
+    "name": "Balanced NPK (Maintenance)",
+    "amount_kg": 250,
+    "npk": "Check fertilizer label",
+    "reason": "Recommended based on Optimal nitrogen status (N: 180.0 mg/kg, P: 25.0 mg/kg, K: 150.0 mg/kg)",
+    "nutrients_provided": "Essential nutrients from Balanced NPK (Maintenance)",
+    "benefits": "Addresses nutrient deficiency in Wheat, promotes healthy growth, and improves yield potential based on soil analysis"
+  },
+  "secondary_fertilizer": {
+    "name": "Borax + Ferrous Sulphate + Zinc Sulphate",
+    "amount_kg": 295.0,
+    "reason": "Addresses micronutrient deficiencies based on soil analysis for Wheat",
+    "nutrients_provided": "Zinc (21% Zn), Boron (11% B), Iron (19% Fe)",
+    "benefits": "Improves enzyme activation, enhances disease resistance, promotes better flowering and fruit set, and prevents micronutrient deficiency symptoms"
+  },
+  "organic_alternatives": [
+    {
+      "name": "Vermicompost",
+      "amount_kg": 6250,
+      "price_per_kg": 15.0,
+      "cost": 93750.0,
+      "npk_content": "1.5-1.0-1.5",
+      "primary_nutrients": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium"
+      ],
+      "benefits": "Improves soil structure, water retention, and microbial activity; Rich in humus and beneficial microorganisms",
+      "reason": "Improves soil structure for Wheat; Helps reduce soil salinity",
+      "timing": "Apply 3-4 weeks before sowing (considering Wheat cultivation and soil temp: 28.5\u00b0C)"
+    },
+    {
+      "name": "Neem cake",
+      "amount_kg": 1250,
+      "price_per_kg": 35.0,
+      "cost": 43750.0,
+      "npk_content": "5.0-1.0-1.5",
+      "primary_nutrients": [
+        "Nitrogen"
+      ],
+      "benefits": "Natural pest repellent, improves nitrogen availability; Slow nitrogen release; Controls soil nematodes",
+      "reason": "Improves soil structure for Wheat; Helps reduce soil salinity",
+      "timing": "Apply 3-4 weeks before sowing (considering Wheat cultivation and soil temp: 28.5\u00b0C)"
+    },
+    {
+      "name": "Compost",
+      "amount_kg": 12500,
+      "price_per_kg": 8.0,
+      "cost": 100000.0,
+      "npk_content": "0.8-0.5-0.8",
+      "primary_nutrients": [
+        "Nitrogen",
+        "Phosphorus",
+        "Potassium"
+      ],
+      "benefits": "Balances soil pH, increases nutrient availability, promotes beneficial microbes; Excellent organic matter source",
+      "reason": "Improves soil structure for Wheat; Helps reduce soil salinity",
+      "timing": "Apply 3-4 weeks before sowing (considering Wheat cultivation and soil temp: 28.5\u00b0C)"
+    }
+  ],
+  "application_timing": {
+    "primary_fertilizer": "At sowing: Apply on 15 November 2025 (Day 0) | First dose: Apply at Tillering stage on 10 December 2025 (Day 25) | Expert Tip: Split nitrogen: Half at sowing, remaining in 2 doses later | Best Time: Early morning (6-8 AM) or evening (4-6 PM) | Weather: Avoid application on very hot days or just before heavy rain",
+    "secondary_fertilizer": "Recommended: Apply at Crown Root Initiation stage on 25 December 2025 (Day 40) | Alternative: You can also apply at Jointing stage on 14 January 2026 (Day 60) if needed | Application Method: Mix with water for foliar spray or apply to soil and water immediately | Precaution: Don't apply during flowering stage unless specifically recommended",
+    "organic_options": "Best Time: Mix with soil when sowing on 15 November 2025 (Day 0) | Even Better: Apply 7-10 days before sowing for better decomposition | Method: Mix well with soil at 6-8 inch (15-20 cm) depth | After Application: Water lightly to help decomposition | Benefits: Organic matter needs time to break down and release nutrients slowly"
+  },
+  "cost_estimate": {
+    "primary_fertilizer": "\u20b98,750",
+    "secondary_fertilizer": "\u20b920,800",
+    "organic_options": "\u20b9237,500",
+    "total_estimate": "\u20b9267,050",
+    "field_size": "For 2.50 hectares",
+    "breakdown": {
+      "primary": {
+        "fertilizer": "Balanced NPK (Maintenance)",
+        "quantity_kg": 250,
+        "price_per_kg": "\u20b935.00",
+        "total": "\u20b98,750"
+      },
+      "secondary": {
+        "fertilizer": "Borax + Ferrous Sulphate + Zinc Sulphate",
+        "quantity_kg": 295.0,
+        "total": "\u20b920,800",
+        "components": [
+          {
+            "name": "Borax",
+            "quantity_kg": 250,
+            "price_per_kg": "\u20b975.00",
+            "cost": "\u20b918,750"
+          },
+          {
+            "name": "Ferrous Sulphate",
+            "quantity_kg": 20,
+            "price_per_kg": "\u20b915.00",
+            "cost": "\u20b9300"
+          },
+          {
+            "name": "Zinc Sulphate",
+            "quantity_kg": 25,
+            "price_per_kg": "\u20b970.00",
+            "cost": "\u20b91,750"
+          }
+        ]
+      },
+      "organics": [
+        {
+          "fertilizer": "Vermicompost",
+          "quantity_kg": 6250,
+          "price_per_kg": "\u20b915.00",
+          "total": "\u20b993,750"
+        },
+        {
+          "fertilizer": "Neem cake",
+          "quantity_kg": 1250,
+          "price_per_kg": "\u20b935.00",
+          "total": "\u20b943,750"
+        },
+        {
+          "fertilizer": "Compost",
+          "quantity_kg": 12500,
+          "price_per_kg": "\u20b98.00",
+          "total": "\u20b9100,000"
+        }
+      ]
+    }
+  },
+  "_metadata": {
+    "generated_at": "2025-12-14T10:30:07.934621",
+    "model_used": "ML Stacking Model (Intelligent Fallback - Crop & Soil Specific)",
+    "nutrient_units": "mg/kg",
+    "crop_type": "Wheat",
+    "npk_status": "N:Optimal, P:Optimal, K:Optimal",
+    "note": "Organic alternatives selected based on NPK status and crop requirements"
+  },
+  "ml_predictions": {
+    "N_Status": "Optimal",
+    "P_Status": "Optimal",
+    "K_Status": "Optimal",
+    "Primary_Fertilizer": "Balanced NPK (Maintenance)",
+    "Secondary_Fertilizer": "Borax + Ferrous Sulphate + Zinc Sulphate",
+    "pH_Amendment": "Balance Maintain"
+  }
+}
