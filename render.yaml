@@ -3,7 +3,6 @@ services:
   - type: web
     name: agricure-backend
     runtime: node
-    rootDir: Backend
     buildCommand: npm install
     startCommand: node src/server.js
     envVars:
