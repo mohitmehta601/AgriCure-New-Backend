@@ -11,8 +11,10 @@ including:
 - Soil condition analysis
 - NPK values in mg/kg units
 
+Works with the Integrated AgriCure Model for unified predictions.
+
 Author: AgriCure AI Team
-Date: November 2025
+Date: December 2025
 """
 
 import os
@@ -364,7 +366,7 @@ DEFAULT_PRICES = {
 # ==================================================================================
 @dataclass
 class MLPrediction:
-    """ML Model predictions"""
+    """Integrated AgriCure Model predictions"""
     n_status: str
     p_status: str
     k_status: str
@@ -969,13 +971,15 @@ Based on the following information, provide detailed recommendations:
 - Sowing Date: {input_data.sowing_date}
 - Field Size: {input_data.field_size} hectares
 
-**ML Model Predictions:**
+**Integrated AgriCure Model Predictions:**
 - Nitrogen Status: {ml_prediction.n_status}
 - Phosphorus Status: {ml_prediction.p_status}
 - Potassium Status: {ml_prediction.k_status}
 - Primary Fertilizer Recommended: {ml_prediction.primary_fertilizer}
 - Secondary Fertilizer Recommended: {secondary_fertilizer}
 - pH Amendment: {ml_prediction.ph_amendment}
+
+**Note:** These predictions are from the Integrated AgriCure Model, a unified rule-based system that provides deterministic recommendations based on crop-specific NPK requirements, soil conditions (pH, EC, moisture), and micronutrient needs.
 
 **Task:**
 Provide recommendations in the following JSON format:
@@ -1065,9 +1069,9 @@ def generate_enhanced_recommendation(
     
     Args:
         input_data: User input data
-        ml_prediction: ML model predictions
-        secondary_fertilizer: Secondary fertilizer from secondary_fertilizer_model.py
-        confidence_scores: Confidence scores from ML model
+        ml_prediction: Integrated AgriCure Model predictions
+        secondary_fertilizer: Secondary fertilizer from Integrated AgriCure Model
+        confidence_scores: Confidence scores (optional)
     
     Returns:
         Complete recommendation report
@@ -1113,21 +1117,31 @@ def generate_enhanced_recommendation(
     # Calculate quantities and costs
     print("💰 Calculating quantities and costs...")
     
-    # Primary fertilizer
-    print(f"🔍 Primary fertilizer from ML: '{ml_prediction.primary_fertilizer}'")
-    primary_quantity = calculate_fertilizer_quantity(
+    # Primary fertilizer - use compound calculation for component breakdown
+    print(f"🔍 Primary fertilizer from Integrated Model: '{ml_prediction.primary_fertilizer}'")
+    primary_result = calculate_compound_fertilizer_cost(
         ml_prediction.primary_fertilizer,
         input_data.field_size,
         ml_prediction.n_status,
         "primary"
     )
-    primary_price_per_kg = get_price(ml_prediction.primary_fertilizer)
-    primary_cost = primary_quantity * primary_price_per_kg
-    print(f"   Normalized name: '{normalize_fertilizer_name(ml_prediction.primary_fertilizer)}'")
-    print(f"   Quantity: {primary_quantity} kg, Price: ₹{primary_price_per_kg}/kg, Total: ₹{primary_cost:.2f}")
+    primary_cost = primary_result["total_cost"]
+    primary_quantity = primary_result["total_quantity"]
+    primary_components = primary_result["components"]
+    
+    # Print detailed breakdown
+    print(f"   Total quantity: {primary_quantity} kg, Total cost: ₹{primary_cost:.2f}")
+    if len(primary_components) > 1:
+        print(f"   Component breakdown:")
+        for comp in primary_components:
+            print(f"     - {comp['name']}: {comp['quantity_kg']} kg × ₹{comp['price_per_kg']}/kg = ₹{comp['cost']:.2f}")
+    else:
+        print(f"   Normalized name: '{normalize_fertilizer_name(ml_prediction.primary_fertilizer)}'")
+        if primary_components:
+            print(f"   Price: ₹{primary_components[0]['price_per_kg']}/kg")
     
     # Secondary fertilizer
-    print(f"🔍 Secondary fertilizer from model: '{secondary_fertilizer}'")
+    print(f"🔍 Secondary fertilizer from Integrated Model: '{secondary_fertilizer}'")
     secondary_result = calculate_compound_fertilizer_cost(
         secondary_fertilizer,
         input_data.field_size,
@@ -1148,6 +1162,24 @@ def generate_enhanced_recommendation(
         print(f"   Normalized name: '{normalize_fertilizer_name(secondary_fertilizer)}'")
         if secondary_components:
             print(f"   Price: ₹{secondary_components[0]['price_per_kg']}/kg")
+    
+    # pH Amendment
+    print(f"🔍 pH Amendment from Integrated Model: '{ml_prediction.ph_amendment}'")
+    ph_amendment_result = calculate_compound_fertilizer_cost(
+        ml_prediction.ph_amendment,
+        input_data.field_size,
+        "optimal",
+        "secondary"
+    )
+    ph_amendment_cost = ph_amendment_result["total_cost"]
+    ph_amendment_quantity = ph_amendment_result["total_quantity"]
+    ph_amendment_components = ph_amendment_result["components"]
+    
+    # Print pH amendment details
+    print(f"   Total quantity: {ph_amendment_quantity} kg, Total cost: ₹{ph_amendment_cost:.2f}")
+    if ph_amendment_components:
+        for comp in ph_amendment_components:
+            print(f"     - {comp['name']}: {comp['quantity_kg']} kg × ₹{comp['price_per_kg']}/kg = ₹{comp['cost']:.2f}")
     
     # Organic alternatives
     organic_costs = []
@@ -1193,7 +1225,7 @@ def generate_enhanced_recommendation(
         })
     
     total_organic_cost = sum(organic_costs)
-    total_cost = primary_cost + secondary_cost + total_organic_cost
+    total_cost = primary_cost + secondary_cost + ph_amendment_cost + total_organic_cost
     
     # Calculate application timing
     application_timing = calculate_application_dates(input_data.sowing_date, input_data.crop_type)
@@ -1281,6 +1313,7 @@ def generate_enhanced_recommendation(
         "cost_estimate": {
             "primary_fertilizer": f"₹{int(primary_cost):,}",
             "secondary_fertilizer": f"₹{int(secondary_cost):,}",
+            "ph_amendment": f"₹{int(ph_amendment_cost):,}",
             "organic_options": f"₹{int(total_organic_cost):,}",
             "total_estimate": f"₹{int(total_cost):,}",
             "field_size": f"For {input_data.field_size:.2f} hectares ({input_data.field_size * 2.471:.2f} acres)",
@@ -1288,8 +1321,16 @@ def generate_enhanced_recommendation(
                 "primary": {
                     "fertilizer": ml_prediction.primary_fertilizer,
                     "quantity_kg": primary_quantity,
-                    "price_per_kg": f"₹{primary_price_per_kg:.2f}",
-                    "total": f"₹{int(primary_cost):,}"
+                    "total": f"₹{int(primary_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in primary_components
+                    ]
                 },
                 "secondary": {
                     "fertilizer": secondary_fertilizer,
@@ -1303,6 +1344,20 @@ def generate_enhanced_recommendation(
                             "cost": f"₹{int(comp['cost']):,}"
                         }
                         for comp in secondary_components
+                    ]
+                },
+                "ph_amendment": {
+                    "fertilizer": ml_prediction.ph_amendment,
+                    "quantity_kg": ph_amendment_quantity,
+                    "total": f"₹{int(ph_amendment_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in ph_amendment_components
                     ]
                 },
                 "organics": [
@@ -1322,7 +1377,7 @@ def generate_enhanced_recommendation(
             "crop_type": input_data.crop_type,
             "sowing_date": input_data.sowing_date,
             "field_size_hectares": input_data.field_size,
-            "model_used": "Gemini-1.5-Flash + ML Stacking Model",
+            "model_used": "Gemini-1.5-Flash + Integrated AgriCure Model",
             "nutrient_units": "mg/kg"
         }
     }
@@ -1342,17 +1397,30 @@ def generate_fallback_recommendation(
 ) -> Dict[str, Any]:
     """
     Generate basic recommendation without Gemini API (fallback)
+    Uses predictions from the Integrated AgriCure Model
+    
+    Args:
+        input_data: User input data
+        ml_prediction: Integrated AgriCure Model predictions
+        secondary_fertilizer: Secondary fertilizer from Integrated AgriCure Model
+        confidence_scores: Confidence scores (optional)
+    
+    Returns:
+        Basic recommendation report
     """
     
     print("📋 Generating fallback recommendation...")
     
-    # Calculate quantities
-    primary_quantity = calculate_fertilizer_quantity(
+    # Calculate quantities using compound fertilizer calculation for component breakdown
+    primary_result = calculate_compound_fertilizer_cost(
         ml_prediction.primary_fertilizer,
         input_data.field_size,
         ml_prediction.n_status,
         "primary"
     )
+    primary_quantity = primary_result["total_quantity"]
+    primary_cost = primary_result["total_cost"]
+    primary_components = primary_result["components"]
     
     # Use compound fertilizer calculation for secondary
     secondary_result = calculate_compound_fertilizer_cost(
@@ -1364,6 +1432,17 @@ def generate_fallback_recommendation(
     secondary_cost = secondary_result["total_cost"]
     secondary_quantity = secondary_result["total_quantity"]
     secondary_components = secondary_result["components"]
+    
+    # Calculate pH amendment cost
+    ph_amendment_result = calculate_compound_fertilizer_cost(
+        ml_prediction.ph_amendment,
+        input_data.field_size,
+        "optimal",
+        "secondary"
+    )
+    ph_amendment_cost = ph_amendment_result["total_cost"]
+    ph_amendment_quantity = ph_amendment_result["total_quantity"]
+    ph_amendment_components = ph_amendment_result["components"]
     
     # Select organic alternatives based on soil conditions and crop type
     organic_alternatives_map = {
@@ -1463,12 +1542,11 @@ def generate_fallback_recommendation(
         })
     
     # Calculate costs
-    primary_price = get_price(ml_prediction.primary_fertilizer)
-    
-    primary_cost = primary_quantity * primary_price
+    # primary_cost already calculated in primary_result
     # secondary_cost already calculated in secondary_result
+    # ph_amendment_cost already calculated
     total_organic_cost = sum(organic_costs)
-    total_cost = primary_cost + secondary_cost + total_organic_cost
+    total_cost = primary_cost + secondary_cost + ph_amendment_cost + total_organic_cost
     
     # Application timing
     application_timing = calculate_application_dates(input_data.sowing_date, input_data.crop_type)
@@ -1524,6 +1602,7 @@ def generate_fallback_recommendation(
         "cost_estimate": {
             "primary_fertilizer": f"₹{int(primary_cost):,}",
             "secondary_fertilizer": f"₹{int(secondary_cost):,}",
+            "ph_amendment": f"₹{int(ph_amendment_cost):,}",
             "organic_options": f"₹{int(total_organic_cost):,}",
             "total_estimate": f"₹{int(total_cost):,}",
             "field_size": f"For {input_data.field_size:.2f} hectares",
@@ -1531,8 +1610,16 @@ def generate_fallback_recommendation(
                 "primary": {
                     "fertilizer": ml_prediction.primary_fertilizer,
                     "quantity_kg": primary_quantity,
-                    "price_per_kg": f"₹{primary_price:.2f}",
-                    "total": f"₹{int(primary_cost):,}"
+                    "total": f"₹{int(primary_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in primary_components
+                    ]
                 },
                 "secondary": {
                     "fertilizer": secondary_fertilizer,
@@ -1548,6 +1635,20 @@ def generate_fallback_recommendation(
                         for comp in secondary_components
                     ]
                 },
+                "ph_amendment": {
+                    "fertilizer": ml_prediction.ph_amendment,
+                    "quantity_kg": ph_amendment_quantity,
+                    "total": f"₹{int(ph_amendment_cost):,}",
+                    "components": [
+                        {
+                            "name": comp["name"],
+                            "quantity_kg": comp["quantity_kg"],
+                            "price_per_kg": f"₹{comp['price_per_kg']:.2f}",
+                            "cost": f"₹{int(comp['cost']):,}"
+                        }
+                        for comp in ph_amendment_components
+                    ]
+                },
                 "organics": [
                     {
                         "fertilizer": org["name"],
@@ -1561,7 +1662,7 @@ def generate_fallback_recommendation(
         },
         "_metadata": {
             "generated_at": datetime.now().isoformat(),
-            "model_used": "ML Stacking Model (Intelligent Fallback - Crop & Soil Specific)",
+            "model_used": "Integrated AgriCure Model (Intelligent Fallback - Rule-Based)",
             "nutrient_units": "mg/kg",
             "crop_type": input_data.crop_type,
             "npk_status": f"N:{ml_prediction.n_status}, P:{ml_prediction.p_status}, K:{ml_prediction.k_status}",
@@ -1576,8 +1677,8 @@ def generate_fallback_recommendation(
 # EXAMPLE USAGE
 # ==================================================================================
 if __name__ == "__main__":
-    # Example: Load ML predictions from your stacking model
-    # This would come from fertilizer_ml_model.py
+    # Example: Using predictions from the Integrated AgriCure Model
+    # This integrates primary, secondary, and pH amendment recommendations
     
     # Sample input data
     sample_input = InputData(
@@ -1593,7 +1694,8 @@ if __name__ == "__main__":
         field_size=2.27  # hectares (approx 5.6 acres)
     )
     
-    # Sample ML predictions
+    # Sample predictions from Integrated AgriCure Model
+    # Note: In production, these come from integrated_agricure_model.py
     sample_prediction = MLPrediction(
         n_status="Optimal",
         p_status="Low",
@@ -1602,10 +1704,10 @@ if __name__ == "__main__":
         ph_amendment="None"
     )
     
-    # Sample secondary fertilizer (from secondary_fertilizer_model.py)
+    # Sample secondary fertilizer from Integrated AgriCure Model
     sample_secondary_fertilizer = "Zinc Sulphate"
     
-    # Sample confidence scores
+    # Sample confidence scores (optional)
     sample_confidences = {
         "N_Status": 0.92,
         "P_Status": 0.88,

@@ -2,10 +2,9 @@
 FINAL INTEGRATED FERTILIZER RECOMMENDATION SYSTEM
 ==================================================
 
-This module integrates three models:
-1. primary_fertilizer_pH_model.py - Rule-based N_Status, P_Status, K_Status, Primary_Fertilizer, pH_Amendment
-2. secondary_fertilizer_model.py - Predicts Secondary_Fertilizer (micronutrients)
-3. LLM_model.py - Generates comprehensive recommendation report
+This module integrates:
+1. integrated_agricure_model.py - Unified model for Primary, Secondary, and pH Amendment predictions
+2. LLM_model.py - Generates comprehensive recommendation report
 
 Author: AgriCure AI Team
 Date: December 2025
@@ -21,11 +20,8 @@ from typing import Dict, Any, Optional
 import warnings
 warnings.filterwarnings('ignore')
 
-# Import primary fertilizer & pH model (rule-based)
-from primary_fertilizer_pH_model import PrimaryFertilizerAndpHModel
-
-# Import secondary fertilizer model
-from secondary_fertilizer_model import SecondaryFertilizerModel
+# Import the new integrated model
+from integrated_agricure_model import IntegratedAgriCure
 
 # Import LLM model components
 from LLM_model import (
@@ -37,9 +33,9 @@ from LLM_model import (
 
 
 # ==================================================================================
-# PRIMARY MODEL - Rule-Based Fertilizer & pH Recommendation
+# INTEGRATED MODEL - Unified Fertilizer Recommendation
 # ==================================================================================
-# Note: We now use the rule-based PrimaryFertilizerAndpHModel instead of ML
+# Note: We now use IntegratedAgriCure for all primary, secondary, and pH predictions
 # This provides 100% deterministic predictions based on expert agricultural rules
 
 
@@ -49,22 +45,19 @@ from LLM_model import (
 class FinalFertilizerRecommendationSystem:
     """
     Complete Fertilizer Recommendation System
-    Integrates Primary ML Model, Secondary Fertilizer Model, and LLM Model
+    Integrates Integrated AgriCure Model and LLM Model
     """
     
     def __init__(self):
-        """Initialize all sub-models"""
+        """Initialize the integrated model"""
         print("\n" + "="*80)
         print("INITIALIZING FINAL FERTILIZER RECOMMENDATION SYSTEM")
         print("="*80 + "\n")
         
-        # Initialize primary fertilizer model (rule-based)
-        self.primary_model = PrimaryFertilizerAndpHModel()
-        
-        # Initialize secondary fertilizer model
-        print("\n⚙️ Initializing Secondary Fertilizer Model...")
-        self.secondary_model = SecondaryFertilizerModel()
-        print("✅ Secondary Fertilizer Model initialized")
+        # Initialize integrated model
+        print("⚙️ Initializing Integrated AgriCure Model...")
+        self.integrated_model = IntegratedAgriCure()
+        print("✅ Integrated AgriCure Model initialized")
         
         print("\n" + "="*80)
         print("✅ ALL MODELS INITIALIZED SUCCESSFULLY")
@@ -119,53 +112,33 @@ class FinalFertilizerRecommendationSystem:
         print("GENERATING FERTILIZER RECOMMENDATION")
         print("="*80)
         
-        # Step 1: Get predictions from Primary ML Model
-        print("\n📊 Step 1: Running Primary ML Model...")
+        # Step 1: Get predictions from Integrated AgriCure Model
+        print("\n📊 Step 1: Running Integrated AgriCure Model...")
         try:
-            primary_predictions = self.primary_model.predict(
+            integrated_predictions = self.integrated_model.recommend(
                 nitrogen=nitrogen,
                 phosphorus=phosphorus,
                 potassium=potassium,
                 crop_type=crop,
                 ph=soil_ph,
-                electrical_conductivity=electrical_conductivity,
-                soil_moisture=soil_moisture,
-                soil_temperature=soil_temperature
+                ec=electrical_conductivity,
+                moisture=soil_moisture
             )
             
-            print("✅ Primary Model Predictions:")
-            print(f"   - N_Status: {primary_predictions['N_Status']}")
-            print(f"   - P_Status: {primary_predictions['P_Status']}")
-            print(f"   - K_Status: {primary_predictions['K_Status']}")
-            print(f"   - Primary_Fertilizer: {primary_predictions['Primary_Fertilizer']}")
-            print(f"   - pH_Amendment: {primary_predictions['pH_Amendment']}")
+            print("✅ Integrated Model Predictions:")
+            print(f"   - N_Status: {integrated_predictions['N_Status']}")
+            print(f"   - P_Status: {integrated_predictions['P_Status']}")
+            print(f"   - K_Status: {integrated_predictions['K_Status']}")
+            print(f"   - Primary_Fertilizer: {integrated_predictions['Primary_Fertilizer']}")
+            print(f"   - Secondary_Fertilizer: {integrated_predictions['Secondary_Fertilizer']}")
+            print(f"   - pH_Amendment: {integrated_predictions['pH_Amendment']}")
             
         except Exception as e:
-            print(f"❌ Error in Primary Model: {e}")
+            print(f"❌ Error in Integrated Model: {e}")
             raise
         
-        # Step 2: Get predictions from Secondary Fertilizer Model
-        print("\n🧪 Step 2: Running Secondary Fertilizer Model...")
-        try:
-            secondary_fertilizer = self.secondary_model.recommend_fertilizer(
-                nitrogen=nitrogen,
-                phosphorus=phosphorus,
-                potassium=potassium,
-                crop_type=crop,
-                pH=soil_ph,
-                ec=electrical_conductivity,
-                moisture=soil_moisture,
-                temperature=soil_temperature
-            )
-            
-            print(f"✅ Secondary Fertilizer: {secondary_fertilizer}")
-            
-        except Exception as e:
-            print(f"❌ Error in Secondary Model: {e}")
-            secondary_fertilizer = "None"
-        
-        # Step 3: Prepare data for LLM Model
-        print("\n🤖 Step 3: Preparing data for LLM Model...")
+        # Step 2: Prepare data for LLM Model
+        print("\n🤖 Step 2: Preparing data for LLM Model...")
         
         # Create InputData object
         input_data = InputData(
@@ -183,12 +156,15 @@ class FinalFertilizerRecommendationSystem:
         
         # Create MLPrediction object
         ml_prediction = MLPrediction(
-            n_status=primary_predictions['N_Status'],
-            p_status=primary_predictions['P_Status'],
-            k_status=primary_predictions['K_Status'],
-            primary_fertilizer=primary_predictions['Primary_Fertilizer'],
-            ph_amendment=primary_predictions['pH_Amendment']
+            n_status=integrated_predictions['N_Status'],
+            p_status=integrated_predictions['P_Status'],
+            k_status=integrated_predictions['K_Status'],
+            primary_fertilizer=integrated_predictions['Primary_Fertilizer'],
+            ph_amendment=integrated_predictions['pH_Amendment']
         )
+        
+        # Extract secondary fertilizer
+        secondary_fertilizer = integrated_predictions['Secondary_Fertilizer']
         
         # Dummy confidence scores (you can add actual confidence from models if available)
         confidence_scores = {
@@ -200,9 +176,9 @@ class FinalFertilizerRecommendationSystem:
             "pH_Amendment": 0.93
         }
         
-        # Step 4: Generate final recommendation using LLM
+        # Step 3: Generate final recommendation using LLM
         if use_llm:
-            print("\n💡 Step 4: Generating Enhanced Recommendation with LLM...")
+            print("\n💡 Step 3: Generating Enhanced Recommendation with LLM...")
             try:
                 final_recommendation = generate_enhanced_recommendation(
                     input_data=input_data,
@@ -221,7 +197,7 @@ class FinalFertilizerRecommendationSystem:
                     confidence_scores=confidence_scores
                 )
         else:
-            print("\n📋 Step 4: Generating Basic Recommendation (without LLM)...")
+            print("\n📋 Step 3: Generating Basic Recommendation (without LLM)...")
             final_recommendation = generate_fallback_recommendation(
                 input_data=input_data,
                 ml_prediction=ml_prediction,
@@ -231,12 +207,13 @@ class FinalFertilizerRecommendationSystem:
         
         # Add ML predictions to the report
         final_recommendation['ml_predictions'] = {
-            'N_Status': primary_predictions['N_Status'],
-            'P_Status': primary_predictions['P_Status'],
-            'K_Status': primary_predictions['K_Status'],
-            'Primary_Fertilizer': primary_predictions['Primary_Fertilizer'],
-            'Secondary_Fertilizer': secondary_fertilizer,
-            'pH_Amendment': primary_predictions['pH_Amendment']
+            'N_Status': integrated_predictions['N_Status'],
+            'P_Status': integrated_predictions['P_Status'],
+            'K_Status': integrated_predictions['K_Status'],
+            'Primary_Fertilizer': integrated_predictions['Primary_Fertilizer'],
+            'Secondary_Fertilizer': integrated_predictions['Secondary_Fertilizer'],
+            'pH_Amendment': integrated_predictions['pH_Amendment'],
+            'Deficit_%': integrated_predictions.get('Deficit_%', {})
         }
         
         print("\n" + "="*80)
